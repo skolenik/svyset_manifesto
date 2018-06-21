@@ -14,6 +14,78 @@ that the data should be analyzed according to the complex sampling design featur
 
 Big four: strata, clusters, unequal probabilities, weight adjustments.
 
+### Stratification
+
+Stratification = breaking up the population/frames into mutually exclusive groups before sampling.
+
+*  Geographic regions in f2f samples
+*  Diagnostic groups in patient list samples
+
+Why?
+
+*  Oversample subpopulations of interest if they can be identified on the frame(s)
+*  Oversample areas of higher concentration of the target rare population
+*  Ensure specific accuracy targets in subpopulations of interest
+*  Utilize different sampling designs/frames in different strata
+*  Balance things around/avoid weird outlying samples/spread the sample across the whole population
+
+### Cluster samples
+
+Cluster, or multistage sampling design = sampling groups of units rather than the ultimate observation units.
+
+*  Geographic units (e.g., census tracts) in f2f samples
+*  Entities in natural hierarchies (e.g., hospitals/practices and providers within a practice)
+
+Why?
+
+*  Complete lists of all units are not available, but survey statistician
+        can obtain lists of administrative units
+        for which residence or health service of observation units
+        can be easily identified
+*  Reduce interviewer travel time/cost in f2f surveys
+*  Interest in multilevel modeling of hierarchical structures
+
+Terminology: PSU = primary sampling unit = cluster
+### Unequal probabilities of selection
+
+Why?
+
+*  Oversample (smaller) subpopulations of interest (e.g., ethnic/racial minorities) that would not have sufficient sample
+   sizes in an equal probability of selection method (epsem) sample
+*  Oversample areas of higher concentration of the target rare population
+*  Result of multiple stage/cluster sampling
+   - Most f2f samples are design with probability proportional to size (PPS) sampling at the first few stages,
+            fixed sample size at last stage $\Rightarrow$ approximately EPSEM
+   -  If measures of sizes are not accurate, or differential nonresponse is encountered, no longer EPSEM
+*  Unintended result of multiple frame sampling
+    - dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected
+
+### Weight adjustments
+
+Why? Corrections for...
+
+*  eligibility
+*  nonresponse (unavoidable in real world)
+*  frame noncoverage
+*  frame overlap in multiple frame surveys
+*  statistical efficiency
+
+Kalton, Flores-Cervantes (2003), Valliant, Dever, Kreuter (2013), Valliant and Dever (2017), Kolenikov (2016), etc.
+
+### Sampling is about doing the best job for the money
+
+In the end of the day, all of the sampling features are there for 1+ of the following reasons:
+
+*  Save money
+            - use cluster samples to save on travel costs
+            - use stratified samples to realize statistical efficiency gains
+*  Cannot get the full population listing
+            - ... so have to use area samples to gradually zoom down to individuals
+            - ... so have to use infrastructure created for a different purpose (telecom or postal) to contact people
+            - ... so have to sample a larger, general population, and screen out the eligible rare/hard to reach population
+*  Overcome the real world data collection difficulties
+            -  nonresponse weight adjustments
+
 ## Survey settings in statistical software
 
 The most common public use data file specification of an areal probability sampling design is that
