@@ -4,7 +4,7 @@
 
 ## Stas Kolenikov, Brady West, Peter Lugtig
 
-In this repository, we wanted to document our understanding of, and recommendations for, appropriate best practices
+In this repository, we document our understanding of, and recommendations for, appropriate best practices
 in specifying the complex sampling design settings in statistical software. We will briefly talk about these features,
 their impact on estimation procedures, how statistical software treates them, and how the survey data providers
 can make data users' life easier by clearly documenting the technically accurate and efficient ways to tell the software
@@ -24,11 +24,99 @@ or split, units would be swapped with one another, etc., typically in order to m
 locations of respondents, as geography is one of the strongest factors putting individuals
 at risk of identification and disclosure.
 
+In the examples below, we provide the following semi-standardized examples:
+
+- a "public use" stratified two-stage design:
+  * the data file in the package native format is `PUMS_svy`, with an appropriate extension
+  * strata are `thisStrat`
+  * clusters are `thisPSU`
+  * weights are `thisWeight`
+- a "dual frame RDD" design, approximated by an unequal probability design:
+  * the data file in the package native format is `RDD_svy`, with an appropriate extension
+  * weights are `thisWeight`
+- a design with the bootstrap replicate weights:
+  * the data file in the package native format is `BSTRAP_svy`, with an appropriate extension
+  * the main weights are `thisWeight`
+  * the replicate weights are `bsWeight1`, `bsWeight2`, ..., `bsWeight100`
+
+In addition, three analyses are discussed:
+- estimation of the total of a continuous variable `y`;
+- cross-tabulation of two categorical variables `sex` and `race`;
+- analysis in subpopulation/domain defined by age restriction, `age` between 18 and 30.
+
 ### R
 
+Implementation of complex survey estimation in `library(survey)` separates the steps of declaring the sampling design
+and running estimation.
+
+(In terms of reading the input data, we assume that the user follows the best practices of workflow management
+and uses `library(here)` to identify the root of the project; 
+see [Bryan (2017)](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/)).
+
+The "public use" stratified two-stage design:
+
 ```
-svydesign(id =~ thisPSU, strat =~ thisStrat, weight =~thisWeight, data =~ thisSurvey)
+# prerequisites
+library(survey)
+library(here)
+# read the data
+thisSurvey <- readData(here("data/PUMS_svy.Rdata"))
+# specify the design
+thisDesign <- svydesign(id =~ thisPSU, strat =~ thisStrat, weights =~thisWeight, data =~ thisSurvey)
+# estimate the total
+(total_y <- svytotal(~y, design = thisDesign) )
+# tabulate
+(tab1_sex_race <- svymean( ~interaction(sex,race,drop=TRUE), design = thisDesign ) )
+(tab2_sex_race <- svytable( ~sex+race, design = thisDesign) )
+(tab3_sex_race <- svyby(~sex, by = ~race, design = thisDesign, FUN = svymean)
+# subpopulation estimation: redeclare the design
+young_adults <- subset( design = thisDesign, ( (age>=18) & (age<=30) ) )
+(total_y_young <- svytotal(~y, design = young_adults )
 ```
+
+In the above, the line `( object <- function_call(input1, ... ) )` simultaneously creates and assigns 
+the object, and prints it. Lumley (2010) notes that by default, all functions give missing values (`NA`)
+when they encounter item missing data. To discard the missing data from analysis, `na.rm=TRUE` should
+be specified as an option to the `svy...(...,na.rm=TRUE)` functions, with the effect of treating 
+the non-missing data data as a subpopulation.
+
+The RDD unequal weights design:
+
+```
+# prerequisites
+library(survey)
+library(here)
+# read the data
+thisSurvey <- readData(here("data/BSTRAP_svy.Rdata"))
+# specify the design
+thisDesign <- svrepdesign(id =~ 1, weights =~thisWeight, data =~ thisSurvey)
+# estimation can use the same syntax as above
+```
+
+The replicate weight design:
+
+```
+# prerequisites
+library(survey)
+library(here)
+# read the data
+thisSurvey <- readData(here("data/RDD_svy.Rdata"))
+# specify the design
+thisDesign <- svydesign(weights =~thisWeight, data =~ thisSurvey, 
+                        repweights =~ "bsWeight[0-9]+", type="bootstrap",
+                        combined.weights = TRUE)
+# estimation can use the same syntax as above
+```
+
+In the above syntax, `"bsWeight[0-9]+"` is a [*regular expression*](https://regexr.com/) which, in this case, builds
+a filter for variable names as follows:
+1. must start with the text `bsWeight` exactly;
+2. this prefix must be followed by a digit `[0-9]`
+3. this digit must happen at least once, and may happen an unlimited number of times (`+` modifier).
+
+For more examples, see Thomas Lumley's documentation of the `library(survey)` package:
+- [Lumley (2010)](https://www.amazon.com/Complex-Surveys-Guide-Analysis-Using/dp/0470284307) book;
+- http://r-survey.r-forge.r-project.org/survey/, home of the `library(survey)` package.
 
 ### Stata
 
