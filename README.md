@@ -222,9 +222,13 @@ It is of course easier on the user when all the relevant information is easily a
 However some reports put weights in one place, e.g. where sampling was described, 
 while cluster/strata/variance estimation only appears some twenty pages away.
 
-4. **Is specific syntax given?** (bonus) ... in all common statistical languages? 
+4. **Is specific syntax to specify survey settings given?** (bonus) ... in all three common statistical languages (R, SAS and Stata)? 
 
-5. (Bonus) **Is an executive summary description of the study design available?**
+5. **Are there examples given for how to answer substantive research questions?**
+In all languages, there are specific ways to run commands that are survey-design-aware. 
+In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly.
+
+6. (Bonus) **Is an executive summary description of the study design available?**
 Many researchers would appreciate a two-three sentence paragraph to summarize the sampling design that
 they could copy and paste into their papers, e.g.,
 
@@ -241,7 +245,7 @@ for unequal selection probabilities, nonresponse, and study eligibility, and are
 reported in this paper. Standard errors are estimated using Taylor series linearization,
 the default analytical method available in most statistical packages.
 
-6. (Bonus) **What kind of references are provided?**
+7. (Bonus) **What kind of references are provided?**
 It is often helpful to the end users if the description of the sampling design features is
 accompanied by the references to (a) methodological literature describing them in general
 (e.g., texbooks such as Korn & Graubard, Kish, Lohr, Heeringa-West-Berglund, Lumley, etc.),
