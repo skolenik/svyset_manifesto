@@ -4,11 +4,7 @@
 
 ## Stas Kolenikov, Brady West, Peter Lugtig
 
-In this repository, we document our understanding of, and recommendations for, appropriate best practices
-in specifying the complex sampling design settings in statistical software. We will briefly talk about these features,
-their impact on estimation procedures, how statistical software treates them, and how the survey data providers
-can make data users' life easier by clearly documenting the technically accurate and efficient ways to tell the software
-that the data should be analyzed according to the complex sampling design features.
+In this repository, we document our understanding of, and recommendations for, appropriate best practices in specifying the complex sampling design settings in statistical software that enables design-based analyses of survey data. We will briefly talk about these features, their impact on estimation procedures, how statistical software treates them, and how the survey data providers can make data users' life easier by clearly documenting the technically accurate and efficient ways to tell the software that the data should be analyzed according to the complex sampling design features.
 
 ## Survey sampling features
 
@@ -46,6 +42,7 @@ Why?
 *  Interest in multilevel modeling of hierarchical structures
 
 Terminology: PSU = primary sampling unit = cluster
+
 ### Unequal probabilities of selection
 
 Why?
@@ -103,6 +100,7 @@ In the examples below, we provide the following semi-standardized examples:
   * strata are `thisStrat`
   * clusters are `thisPSU`
   * weights are `thisWeight`
+  * Taylor Series Linearization (TSL) is generally the default variance estimation procedure in these settings
 - a "dual frame RDD" design, approximated by an unequal probability design:
   * the data file in the package native format is `RDD_svy`, with an appropriate extension
   * weights are `thisWeight`
