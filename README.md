@@ -4,7 +4,7 @@
 
 ## Stas Kolenikov, Brady West, Peter Lugtig
 
-In this repository, we document our understanding of, and recommendations for, appropriate best practices in specifying the complex sampling design settings in statistical software that enables design-based analyses of survey data. We will briefly talk about these features, their impact on estimation procedures, how statistical software treates them, and how the survey data providers can make data users' life easier by clearly documenting the technically accurate and efficient ways to tell the software that the data should be analyzed according to the complex sampling design features.
+In this repository, we document our understanding of, and recommendations for, appropriate best practices in specifying the complex sampling design settings in statistical software that enables design-based analyses of survey data. We will briefly talk about these features, their impact on estimation procedures, how statistical software treates them, and how the survey data providers can make data users' lives easier by clearly documenting the technically accurate and efficient ways to tell the software that the data should be analyzed according to the complex sampling design features.
 
 ## Survey sampling features
 
@@ -205,28 +205,24 @@ https://github.com/skolenik/ICHPS2018-svy
 
 https://statstas.shinyapps.io/svysettings/
 
-## Survey settings documentation: rubrics
+## Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics
 
 1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
-This would be a person with training on par or exceeding the level of Lohr or Kish textbooks, and applied experience
-on par or exceeding Lumley or Heeringa, West and Berglund books.
+This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied experience on par with or exceeding the Lumley (2010) or Heeringa, West and Berglund (2017) books.
 
-2. **Can an applied researcher figure out from documentation how to set the data up?**
-This would be a person who has only cursory knowledge of survey methodology, based on at most several hours 
-of classroom instruction in their "methods" class or a short course at a conference.
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+This would be a person who has some background / training in applied statistical analysis, but has only cursory knowledge of survey methodology, based on at most several hours of classroom instruction in their "methods" class or a short course at a conference.
 
-3. **Is everything described succinctly in one place, or scattered through the document?** 
-It is of course easier on the user when all the relevant information is easily available in a single section.
-However some reports put weights in one place, e.g. where sampling was described, 
-while cluster/strata/variance estimation only appears some twenty pages away.
+3. **Is everything described succinctly in one place, or scattered throughout the document?** 
+It is of course easier on the user when all the relevant information is easily available in a single section. However, some reports put information about weights in one place, e.g. where sampling was described, while information about other complex sampling features (e.g., cluster/strata/variance estimation) only appears some twenty pages away.
 
-4. **Is specific syntax to specify survey settings given?** (bonus) ... in all three common statistical languages (R, SAS and Stata)? 
+4. **Are examples of specific syntax to specify survey settings provided?** 
+Has the data producer provided worked and clearly-annotated examples of analyses of the complex sample survey data produced by a given survey using the syntax for existing procedures in one or more common statistical software packages? And as a bonus, have examples been provided in multiple languages (e.g., SAS, R, and Stata)? 
 
 5. **Are there examples given for how to answer substantive research questions?**
-In all languages, there are specific ways to run commands that are survey-design-aware. 
-In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly.
+In all languages, there are specific ways to run commands that are survey-design-aware. In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly. For instance, are examples provided for both descriptive and analytic (i.e., regression-driven) research questions?
 
-6. (Bonus) **Is an executive summary description of the study design available?**
+6. (Bonus) **Is an executive summary description of the sample design available?**
 Many researchers would appreciate a two-three sentence paragraph to summarize the sampling design that
 they could copy and paste into their papers, e.g.,
 
@@ -243,7 +239,7 @@ for unequal selection probabilities, nonresponse, and study eligibility, and are
 reported in this paper. Standard errors are estimated using Taylor series linearization,
 the default analytical method available in most statistical packages.
 
-7. (Bonus) **What kind of references are provided?**
+7. (Bonus) **What kinds of references are provided?**
 It is often helpful to the end users if the description of the sampling design features is
 accompanied by the references to (a) methodological literature describing them in general
 (e.g., texbooks such as Korn & Graubard, Kish, Lohr, Heeringa-West-Berglund, Lumley, etc.),
@@ -253,35 +249,25 @@ in technical literature describing the study, if appropriate. E.g., the descript
 of clustered sampling designs used in the U.S. Census Bureau large scale surveys
 such as the American Community Survey or Current Population Survey could refer 
 to the general description of stratified clustered surveys,
-to the user Handbooks, 
-and to the technical papers on variance estimation ([Ash 2011](http://www.citeulike.org/user/ctacmo/article/13018645)).
-
+to the user Handbooks, and to the technical papers on variance estimation ([Ash 2011](http://www.citeulike.org/user/ctacmo/article/13018645)).
 
 (Secondary bonus) Are the references pointing out to sources other than the authors? (Chances are if there's a JSM Proceedings paper by the same group of authors, it won't be any clearer, frankly.)
 
-## Survey settings documentation: practice
+The seven rubrics defined here will be used below to "score" several existing examples of documentation for public-use survey data files based on these criteria. For example, if the documentation for a public-use data file successfully satisfies / meets the first five rubrics above, the documentation will be scored 5/5. These scores are designed to be **illustrative**, in terms of rating existing examples of documentation for public-use data files on how effectively they convey complex sampling features and how they should be employed in analysis to users. The scores are designed to motivate data producers to improve the clarity of their documentation for a variety of data users hoping to analyze large (and usually publically-funded) survey data sets.
 
-In this section, we will provide a convenience sample of several public use file (PUF) data set. We will apply the above rubrics
-to see how the PUF documentation scores against them.
+## Evaluating documentation in practice
 
-
-
-
-
-
+In this section, we will evaluate a convenience sample of the documentation for several public use survey data files (PUFs). We will apply the above rubrics to see how the documentation compares in terms of effectively describing appropriate analysis techniques to data users.
 
 ### Dealing with existing documentation
 
+1. Search documentation for the software footprint as keywords: `svyset` per Stata, `PROC SURVEYMEANS` per SAS, `svydesign` per R `library(survey)`, etc.
 
-
-1. Search documentation for the software footprint as keywords: `svyset` per Stata, `PROC SVY` per SAS, `svydesign` per R
-`library(survey)`.
-
-2. If that fails, search for "sampling weight", "final weight", "analysis weight" or "design weight". 
+2. If that fails, search for "sampling weight", "final weight", "analysis weight", "survey weight" or "design weight". 
 You can search for "weight" per se but you should expect that in health studies, this is likely to produce 
 many false positives.
 
-3. See if there is any description of strata and clusters near the text where weights are mentioned.
+3. See if there is any description of the sampling strata and clusters near the text where weights are mentioned.
 
 4. Search for "*PSU*" and "*cluster*" and "*strata*" and "*stratification*" to find
 the variables that needed to be specified in survey settings.
@@ -290,19 +276,70 @@ the variables that needed to be specified in survey settings.
 replicate variance estimation methods.
 
 
-### Survey name
+### The National Survey of Family Growth (NSFG)
 
-**Funding**: the ultimate client of the study
+**Funding**: 
 
-**Data collection**: the organization who collected and documented the data
+* Eunice Kennedy Shriver National Institute of Child Health and Human Development
+* Office of Population Affairs
+* NCHS, CDC
+* Division of HIV/AIDS Prevention, CDC
+* Division of Sexually Transmitted Disease Prevention, CDC
+* Division of Reproductive Health, CDC
+* Division of Birth Defects and Developmental Disabilities, CDC
+* Division of Cancer Prevention and Control, CDC
+* Children’s Bureau, Administration for Children and Families (ACF)
+* Office of Planning, Research and Evaluation, ACF
 
-**Host**: the organization that hosts the data
+**Data collection**: The University of Michigan Survey Research Center (http://src.isr.umich.edu)
 
-**URL**: 
+**Host**: The National Center for Health Statistics (http://www.cdc.gov/nchs/)
 
-**Rubrics**: how well the documentation matches the desired criteria
+**URL**: http://www.cdc.gov/nchs/nsfg
 
-**Score**:
+**Rubrics**: 
+
+1. Can a survey statistician easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?
+
+Yes. Electronic documents like the one found at the following link make it very easy for survey statisticians and applied researchers alike to correctly declare complex sampling features to survey analysis software for design-based analyses.
+
+https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf
+
+2. Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis? 
+
+Yes. See above.
+
+3. Is everything that the data user needs to know about the complex sampling contained in one place?
+
+Yes, with a caveat; the above documentation provides clearly annotated and worked examples of estimation and variance estimation using existing software, but very little (if anything) is said about the actual complex sample design. This information appears in separate electronic files, such as the one linked below. This is out of necessity, however, given the complexity of the NSFG sample design, and all of the information that a user needs to compute weighted point estimates and estimate variance accounting for the complex sampling can be found in examples like the one indicated above.
+
+https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf
+
+4. Are examples of specific syntax for performing correct design-based analyses provided?
+
+Yes. See the first link above. The examples are clearly described, and both syntax and output are included in each case. Bonus: syntax and output are provided for both SAS and Stata.
+
+5. Are examples of analyses need for addressing specific substantive questions provided?
+
+Yes. In addition to the link above, see the following links below:
+
+https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex2.pdf
+
+https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex3.pdf
+
+No examples of regression analyses are provided, however.
+
+6. (Bonus) Is an executive summary of the sample design provided?
+
+Yes. See the first section at this link: https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf
+
+7. (Bonus) What kinds of references are provided?
+
+There are several references to the most important sample design literature included in Section 11 of the document linked above.
+
+**Score**: 7/5
+
+The NSFG provides an excellent example of the type of documentation that needs to be provided to data users to minimize the risk of analytic error due to a failure to account for complex sampling features.
 
 
 
