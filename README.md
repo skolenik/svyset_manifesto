@@ -7,7 +7,7 @@ appropriate best practices in specifying the complex sampling design settings
 in statistical software that enables design-based analyses of survey data.
 We discuss features of the complex survey data such as stratification, clustering, 
 unequal probabilities of selection, and calibration, and outline their impact on estimation procedures.
-We demonstrate how statistical software treates them, and how the survey data providers 
+We demonstrate how statistical software treats them, and how the survey data providers 
 can make data users' lifes easier by clearly documenting accurate and efficient ways to make sure 
 that their software properly accounts for the complex sampling design features.
 
