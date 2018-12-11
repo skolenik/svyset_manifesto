@@ -533,6 +533,8 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 ### A Portrait of Jewish Americans
 
+⭐⭐⭐⭐☆
+
 **Funding**: The Pew Research Center’s 2013 survey of U.S. Jews was conducted by the 
 center’s Religion & Public Life Project with generous funding from 
 The Pew Charitable Trusts and the Neubauer Family Foundation.
@@ -546,27 +548,34 @@ The Pew Charitable Trusts and the Neubauer Family Foundation.
 **Rubrics**: how well the documentation matches the desired criteria
 
 1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
-This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied experience on par with or exceeding the Lumley (2010) or Heeringa, West and Berglund (2017) books.
+Yes; survey documentation explains the differences between the household and the person-level weights,
+and stresses that the boostrap weights should be used for variance estimation.
 
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
-This would be a person who has some background / training in applied statistical analysis, but has only cursory knowledge of survey methodology, based on at most several hours of classroom instruction in their "methods" class or a short course at a conference.
+Yes; Stata syntax is provided early in the document, or can be found by search in the PDF file.
 
 3. **Is everything described succinctly in one place, or scattered throughout the document?** 
-It is of course easier on the user when all the relevant information is easily available in a single section. However, some reports put information about weights in one place, e.g. where sampling was described, while information about other complex sampling features (e.g., cluster/strata/variance estimation) only appears some twenty pages away.
+Yes; all of the relevant information is contained in the **Key Elements of the Data** section in about 2 pages.
 
 4. **Are examples of specific syntax to specify survey settings provided?** 
-Has the data producer provided worked and clearly-annotated examples of analyses of the complex sample survey data produced by a given survey using the syntax for existing procedures in one or more common statistical software packages? And as a bonus, have examples been provided in multiple languages (e.g., SAS, R, and Stata)? 
+Yes; item 6 of **Key Elements of the Data** section identifies the variables and provides Stata syntax 
+for individual level and household level anlayses. 
+(Search for any of `Stata`, `SAS`, `weight`, `svyset` would lead the researcher to this information.)
+A warninig is given that SPSS Statistics Base package cannot correctly compute standard errors.
 
 5. **Are there examples given for how to answer substantive research questions?**
-In all languages, there are specific ways to run commands that are survey-design-aware. In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly. For instance, are examples provided for both descriptive and analytic (i.e., regression-driven) research questions?
+No examples are given.
 
 6. (Bonus) **Is an executive summary description of the sample design available?**
-Many researchers would appreciate a two-three sentence paragraph to summarize the sampling design that
-they could copy and paste into their papers, e.g.,
+Sample design is described in painstaking detail in about 9 pages. No short summary of the design is available
+from the technical documentation, although such a summary can be found in the substantive report
+(http://www.pewforum.org/2013/10/01/jewish-american-beliefs-attitudes-culture-survey/).
 
+7. (Bonus) **What kinds of references are provided?**
+No additional references are given.
 
 **Score**:
-
+4+/5
 
 
 
