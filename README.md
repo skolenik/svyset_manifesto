@@ -379,7 +379,8 @@ In this section, we will evaluate a convenience sample of the documentation for 
 
 ### Dealing with existing documentation
 
-1. Search documentation for the software footprint as keywords: `svyset` per Stata, `PROC SURVEYMEANS` per SAS, `svydesign` per R `library(survey)`, etc.
+1. Search documentation for the software footprint as keywords: `svyset` per Stata, 
+`PROC SURVEY` per SAS, `svydesign` per R `library(survey)`.
 
 2. If that fails, search for "sampling weight", "final weight", "analysis weight", "survey weight" or "design weight". 
 You can search for "weight" per se but you should expect that in health studies, this is likely to produce 
@@ -390,11 +391,13 @@ many false positives.
 4. Search for "*PSU*" and "*cluster*" and "*strata*" and "*stratification*" to find
 the variables that needed to be specified in survey settings.
 
-5. Search for "*replicate weights*", "*BRR*", "*jackknife*" and "*bootstrap*", the keywords for the popular
+5. Search for "*variance estimation*", the generic technical term to deal with complexities of survey estimation.
+
+6. Search for "*replicate weights*", "*BRR*", "*jackknife*" and "*bootstrap*", the keywords for the popular
 replicate variance estimation methods.
 
 
-### The National Survey of Family Growth (NSFG)
+### The National Survey of Family Growth (NSFG), 2013--2015
 
 ⭐⭐⭐⭐⭐
 
@@ -419,47 +422,45 @@ replicate variance estimation methods.
 
 **Rubrics**: 
 
-1. Can a survey statistician easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?
+1. **Can a survey statistician easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?** Yes. Electronic documents like 
+[Example 1: Variance Estimates for Percentages](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf) 
+linked from the [documentation page](https://www.cdc.gov/nchs/nsfg/nsfg_2013_2015_puf.htm) 
+under *Variance estimation* subtitle make it very easy for survey statisticians and applied researchers alike 
+to correctly declare complex sampling features to survey analysis software for design-based analyses.
 
-Yes. Electronic documents like the one found at the following link make it very easy for survey statisticians and applied researchers alike to correctly declare complex sampling features to survey analysis software for design-based analyses.
+2. **Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?** Yes. See above.
 
-https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf
+**3. Is everything that the data user needs to know about the complex sampling contained in one place?** 
+Yes, although very little (if anything) is said about the actual complex sample design. 
+Instead this information appears in separate electronic files, such as 
+[Sample Design Documentation](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf). 
+This is out of necessity, however, given the complexity of the NSFG sample design, 
+and all of the information that a user needs to compute weighted point estimates and estimate variance 
+accounting for the complex sampling can be found in examples like the one indicated above.
 
-2. Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis? 
+**4. Are examples of specific syntax for performing correct design-based analyses provided?**
+Yes. Three examples are clearly documented 
+([tabulations for categorical variables](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf); 
+[means for continuous variables](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex2.pdf);
+[analysis with domains/subpopulations](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex3.pdf)) 
+and linked on the main documentation page, and both syntax and output are included in each case. 
+Bonus: syntax and output are provided for both SAS and Stata.
 
-Yes. See above.
+**5. Are examples of analyses need for addressing specific substantive questions provided?**
+Yes; see previous item.
 
-3. Is everything that the data user needs to know about the complex sampling contained in one place?
+**6. (Bonus) Is an executive summary of the sample design provided?**
+Yes; such an executive summary is given in the first section of 
+[the main sample document](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf)
 
-Yes, with a caveat; the above documentation provides clearly annotated and worked examples of estimation and variance estimation using existing software, but very little (if anything) is said about the actual complex sample design. This information appears in separate electronic files, such as the one linked below. This is out of necessity, however, given the complexity of the NSFG sample design, and all of the information that a user needs to compute weighted point estimates and estimate variance accounting for the complex sampling can be found in examples like the one indicated above.
-
-https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf
-
-4. Are examples of specific syntax for performing correct design-based analyses provided?
-
-Yes. See the first link above. The examples are clearly described, and both syntax and output are included in each case. Bonus: syntax and output are provided for both SAS and Stata.
-
-5. Are examples of analyses need for addressing specific substantive questions provided?
-
-Yes. In addition to the link above, see the following links below:
-
-https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex2.pdf
-
-https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex3.pdf
-
-No examples of regression analyses are provided, however.
-
-6. (Bonus) Is an executive summary of the sample design provided?
-
-Yes. See the first section at this link: https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf
-
-7. (Bonus) What kinds of references are provided?
-
+**7. (Bonus) What kinds of references are provided?**
 There are several references to the most important sample design literature included in Section 11 of the document linked above.
 
 **Score**: 7/5
 
-The NSFG provides an excellent example of the type of documentation that needs to be provided to data users to minimize the risk of analytic error due to a failure to account for complex sampling features.
+The NSFG provides an excellent example of the type of documentation 
+that needs to be provided to data users to minimize the risk of analytic error 
+due to a failure to account for complex sampling features.
 
 
 
@@ -577,6 +578,11 @@ No additional references are given.
 **Score**:
 4+/5
 
+A Portrait of Jewish Americans is a very well described survey that most researchers will be able to 
+analyze correctly by following the instructions of the data provider. 
+Slight limitations of the documentation is that examples of the settings are only 
+given for one package, Stata, and no examples of substantive analyses, e.g. those leading to the primary
+tables in the substantive report, are provided.
 
 
 ### Survey name
