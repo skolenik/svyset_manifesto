@@ -1,5 +1,3 @@
-`svyset_manifesto`
-
 # How to specify survey settings
 
 ## Stas Kolenikov, Brady West, Peter Lugtig
@@ -192,14 +190,97 @@ For more examples, see Thomas Lumley's documentation of the `library(survey)` pa
 
 ### Stata
 
+In Stata, survey settings can be specified once, and be used later with the `svy:` estimation prefix.
+The settings can be saved with the data set. This is a recommended best practice for data providers.
+
 ```
 use thisSurvey, clear
 svyset 
 * if empty, specify svyset on your own
 svyset thisPSU [pw=thisWeight], strata(thisStrat)
+* estimate the total
+svy :  total y
+* tabulate
+svy : tab sex race, col se
+* subpopulation estimation: subpop option
+svy , subpop( if inrange(age,18,30) ) : total y
 ```
 
+Replicate weight designs:
+
+```
+use thisSurvey, clear
+svyset 
+* if empty, specify svyset on your own
+svyset [pw=thisWeight], vce(bootstrap) bsrw( bsWeight* ) mse
+* estimate the total
+svy :  total y
+* tabulate
+svy : tab sex race, col se
+* subpopulation estimation: subpop option
+svy , subpop( if inrange(age,18,30) ) : total y
+```
+
+The estimation commands themselves are identical to those for the cluster+strata designs.
+
+The `mse` option of the `svyset` command requests the MSE version of the estimator 
+where the original estimate is subtracted, <!--
+$$
+v[\hat\theta] = \frac1R \sum_{r=1}^R (\hat\theta^{(r)}-\hat\theta)^2
+$$
+-->
+vs. variance version where the mean of the pseudo-values is substracted 
+when the squared differences are formed.
+<!--
+$$
+\tilde v[\hat\theta] = \frac1R \sum_{r=1}^R (\hat\theta^{(r)}-\bar{\hat\theta})^2, 
+\quad \bar{\hat\theta} = \frac1R \sum_{r=1}^$ \hat\theta^{(r)}
+$$
+-->
+
 ### SAS
+
+In SAS, survey settings need to be declared in every `SURVEY` procedure.
+
+[Tabulations and cross-tabulations](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#surveyfreq_toc.htm):
+
+```
+PROC SURVEYFREQ data=thisSurveyLib.thisSurvey;
+   WEIGHTS thisWeight;
+   CLUSTER thisPSU;
+   STRATA thisStrat;
+   TABLES sex*race;
+RUN;
+```
+
+Subpopulation analysis:
+
+```
+DATA thisSurveyLib.thisSurvey;
+   SET thisSurveyLib.thisSurvey;
+   age_18to30 = (age>=18) & (age<=30);
+RUN;
+PROC SURVEYFREQ data=thisSurveyLib.thisSurvey;
+   WEIGHTS thisWeight;
+   CLUSTER thisPSU;
+   STRATA thisStrat;
+   TABLES sex*race;
+   DOMAIN age_18to30;
+RUN;
+```
+
+<--
+[Regression](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#surveyreg_toc.htm):
+
+```
+PROC SURVEYFREQ data=thisSurveyLib.thisSurvey;
+   WEIGHTS thisWeight;
+   CLUSTER thisPSU;
+   STRATA thisStrat;
+   TABLES sex*race;
+RUN;
+```
+-->
 
 ### See also
 
