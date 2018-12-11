@@ -206,7 +206,23 @@ svy : tab sex race, col se
 svy , subpop( if inrange(age,18,30) ) : total y
 ```
 
-Replicate weight designs:
+The RDD unequal weights design:
+
+```
+use thisSurvey, clear
+svyset 
+* if empty, specify svyset on your own
+svyset thisPSU [pw=thisWeight]
+* estimation commands as before
+* estimate the total
+svy :  total y
+* tabulate
+svy : tab sex race, col se
+* subpopulation estimation: subpop option
+svy , subpop( if inrange(age,18,30) ) : total y
+```
+
+The replicate weight design:
 
 ```
 use thisSurvey, clear
@@ -237,6 +253,8 @@ $$
 \quad \bar{\hat\theta} = \frac1R \sum_{r=1}^$ \hat\theta^{(r)}
 $$
 -->
+
+Starting with Stata 15.1, calibrated weights [are supported](https://www.stata.com/bookstore/survey-weights/).
 
 ### SAS
 
