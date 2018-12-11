@@ -4,6 +4,23 @@
 
 In this repository, we document our understanding of, and recommendations for, appropriate best practices in specifying the complex sampling design settings in statistical software that enables design-based analyses of survey data. We will briefly talk about these features, their impact on estimation procedures, how statistical software treates them, and how the survey data providers can make data users' lives easier by clearly documenting the technically accurate and efficient ways to tell the software that the data should be analyzed according to the complex sampling design features.
 
+### About authors
+
+Stas Kolenikov is Principal Scientist at [Abt Associates](http://www.abtassociates.com); 
+@skolenik on GitHub; [@StatStas](https://twitter.com/StatStas) on Twitter.
+
+Brady West is Associate Research Professor
+in the [Michigan Program in Survey Methodology](http://www.isr.umich.edu/gradprogram/) 
+at the [Institute for Social Research](http://www.isr.umich.edu/),  University of Michigan-Ann Arbor.
+[@bradytwest](https://twitter.com/bradytwest) on Twitter.
+Website: http://www-personal.umich.edu/~bwest/
+
+Peter Lugtig is 
+Associate Professor at the Department of Methodology and Statistics
+in the School of Social and Behavioural Sciences, University of Utrecht.
+[@PeterLugtig](https://twitter.com/PeterLugtig) on Twitter.
+Website: http://www.peterlugtig.com/
+
 ## Survey sampling features
 
 Big four: strata, clusters, unequal probabilities, weight adjustments.
@@ -287,24 +304,12 @@ PROC SURVEYFREQ data=thisSurveyLib.thisSurvey;
 RUN;
 ```
 
-<--
-[Regression](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#surveyreg_toc.htm):
-
-```
-PROC SURVEYFREQ data=thisSurveyLib.thisSurvey;
-   WEIGHTS thisWeight;
-   CLUSTER thisPSU;
-   STRATA thisStrat;
-   TABLES sex*race;
-RUN;
-```
--->
-
 ### See also
 
 https://github.com/skolenik/ICHPS2018-svy
 
 https://statstas.shinyapps.io/svysettings/
+
 
 ## Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics
 
