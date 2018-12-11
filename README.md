@@ -8,6 +8,11 @@ In this repository, we document our understanding of, and recommendations for, a
 
 Stas Kolenikov is Principal Scientist at [Abt Associates](http://www.abtassociates.com); 
 @skolenik on GitHub; [@StatStas](https://twitter.com/StatStas) on Twitter.
+His interest in this project is from the triple perspective of the data provider
+at the Division of Data Science, Surveys, and Enabling Technologies of Abt Associates;
+of an occasional continuing education instructor teaching courses on survey design and weighting, and estimation
+with complex survey data; and of the developer of 
+[statistical software for survey weight calibration](https://econpapers.repec.org/software/bocbocode/s458430.htm).
 
 Brady West is Associate Research Professor
 in the [Michigan Program in Survey Methodology](http://www.isr.umich.edu/gradprogram/) 
@@ -532,6 +537,26 @@ The Pew Charitable Trusts and the Neubauer Family Foundation.
 **URL**: http://www.pewforum.org/dataset/a-portrait-of-jewish-americans/
 
 **Rubrics**: how well the documentation matches the desired criteria
+
+1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
+This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied experience on par with or exceeding the Lumley (2010) or Heeringa, West and Berglund (2017) books.
+
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+This would be a person who has some background / training in applied statistical analysis, but has only cursory knowledge of survey methodology, based on at most several hours of classroom instruction in their "methods" class or a short course at a conference.
+
+3. **Is everything described succinctly in one place, or scattered throughout the document?** 
+It is of course easier on the user when all the relevant information is easily available in a single section. However, some reports put information about weights in one place, e.g. where sampling was described, while information about other complex sampling features (e.g., cluster/strata/variance estimation) only appears some twenty pages away.
+
+4. **Are examples of specific syntax to specify survey settings provided?** 
+Has the data producer provided worked and clearly-annotated examples of analyses of the complex sample survey data produced by a given survey using the syntax for existing procedures in one or more common statistical software packages? And as a bonus, have examples been provided in multiple languages (e.g., SAS, R, and Stata)? 
+
+5. **Are there examples given for how to answer substantive research questions?**
+In all languages, there are specific ways to run commands that are survey-design-aware. In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly. For instance, are examples provided for both descriptive and analytic (i.e., regression-driven) research questions?
+
+6. (Bonus) **Is an executive summary description of the sample design available?**
+Many researchers would appreciate a two-three sentence paragraph to summarize the sampling design that
+they could copy and paste into their papers, e.g.,
+
 
 **Score**:
 
