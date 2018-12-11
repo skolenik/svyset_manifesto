@@ -14,16 +14,18 @@ Big four: strata, clusters, unequal probabilities, weight adjustments.
 
 Stratification = breaking up the population/frames into mutually exclusive groups before sampling.
 
-*  Geographic regions in f2f samples
-*  Diagnostic groups in patient list samples
+*  Geographic regions for in-person samples
+*  Diagnostic groups for patient list samples
+*  Industry and/or employment size and/or geographical regions for establishment samples
 
 Why?
 
 *  Oversample subpopulations of interest if they can be identified on the frame(s)
-*  Oversample areas of higher concentration of the target rare population
+*  Oversample areas of higher concentration of the target rare population (c.f. http://www.asasrms.org/Proceedings/y2006/Files/JSM2006-000557.pdf)
 *  Ensure specific accuracy targets in subpopulations of interest
 *  Utilize different sampling designs/frames in different strata
 *  Balance things around/avoid weird outlying samples/spread the sample across the whole population
+*  Optimize costs vs. precision via [Neyman-Chuprow](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_surveyselect_a0000000208.htm) or more complicated allocations
 
 ### Cluster samples
 
@@ -36,7 +38,7 @@ Why?
 
 *  Complete lists of all units are not available, but survey statistician
         can obtain lists of administrative units
-        for which residence or health service of observation units
+        for which residence or other relevant eligibility status of observation units
         can be easily identified
 *  Reduce interviewer travel time/cost in f2f surveys
 *  Interest in multilevel modeling of hierarchical structures
@@ -277,6 +279,8 @@ replicate variance estimation methods.
 
 
 ### The National Survey of Family Growth (NSFG)
+
+⭐⭐⭐⭐⭐
 
 **Funding**: 
 
