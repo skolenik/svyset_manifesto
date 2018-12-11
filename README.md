@@ -2,7 +2,14 @@
 
 ## Stas Kolenikov, Brady West, Peter Lugtig
 
-In this repository, we document our understanding of, and recommendations for, appropriate best practices in specifying the complex sampling design settings in statistical software that enables design-based analyses of survey data. We will briefly talk about these features, their impact on estimation procedures, how statistical software treates them, and how the survey data providers can make data users' lives easier by clearly documenting the technically accurate and efficient ways to tell the software that the data should be analyzed according to the complex sampling design features.
+In this repository, we document our understanding of, and recommendations for, 
+appropriate best practices in specifying the complex sampling design settings 
+in statistical software that enables design-based analyses of survey data.
+We discuss features of the complex survey data such as stratification, clustering, 
+unequal probabilities of selection, and calibration, and outline their impact on estimation procedures.
+We demonstrate how statistical software treates them, and how the survey data providers 
+can make data users' lifes easier by clearly documenting accurate and efficient ways to make sure 
+that their software properly accounts for the complex sampling design features.
 
 ### About authors
 
