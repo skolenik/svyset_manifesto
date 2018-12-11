@@ -499,7 +499,7 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 ### India Human Development Survey
 
-**Funding**: the ultimate client of the study
+**Funding**: 
 
 **Data collection**: the organization who collected and documented the data
 
@@ -510,6 +510,26 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 **Rubrics**: how well the documentation matches the desired criteria
 
 **Score**:
+
+
+
+
+### A Portrait of Jewish Americans
+
+**Funding**: The Pew Research Center’s 2013 survey of U.S. Jews was conducted by the 
+center’s Religion & Public Life Project with generous funding from 
+The Pew Charitable Trusts and the Neubauer Family Foundation.
+
+**Data collection**: Abt SRBI under contract to Pew Research Center 
+
+**Host**: Pew Research Center http://www.pewresearch.org/
+
+**URL**: http://www.pewforum.org/dataset/a-portrait-of-jewish-americans/
+
+**Rubrics**: how well the documentation matches the desired criteria
+
+**Score**:
+
 
 
 
