@@ -411,13 +411,15 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 ### Understanding Society:
 
+:star: :star: :star: :star:
+
 **Funding**: Economic & Social Research Council (ESRC).
 
 **Data collection**: 
 -The Institute for Social and Economic Research (ISER), University of Essex
 - NatCen Social Research (wave 1-5) - Great Britian
 - Central Survey Unit of NISRA (wave 1-5)- Northern Ireland
-- Kantar Public UK (wave 6 onwards
+- Kantar Public UK (wave 6 onwards)
 
 **Host**: The UK data archive: https://discover.ukdataservice.ac.uk/series/?sn=2000053
 
@@ -436,7 +438,8 @@ As the study is a household study, no clustering is used.
 
 2. Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for 
 design-based analysis? 
-Yes. The design of the study is highly complex however, and the applied researcher needs to have a very clear definition of what the target population of their survey exactly is. Guidance is provided on what survey weights to use depending on the choice of the target population, but the description is technical.
+Yes. The design of the study is highly complex however, and the applied researcher needs to have a very clear definition of what the target population of their survey exactly is. 
+Guidance is provided on what survey weights to use depending on the choice of the target population, but the description is technical.
 
 3. Is everything that the data user needs to know about the complex sampling contained in one place?
 Yes, section 3.9 of the user documentation includes all information. 
@@ -455,26 +458,58 @@ The documentation includes many references to additional papers and technical re
 
 **Score**: 6/7
 
+### European Social Survey ###
 
+:star: :star: :star: :star:
 
-### European Scoial Survey
+**Funding**: European Commission, Horizon 2020. 
+Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments
 
+**Data collection**: coordinated by City University, London, UK. 
+Data collection in separate European Countries coordinated within every country. 
 
-**Funding**:
+**Host**: European Social Survey, formerly at Norwegian data Archive
 
-**Data collection**:
-
-**Host**: ICPSR
-
-**URL**: http://www.europeansocialsurvey.org/docs/methodology/ESS_weighting_data_1.pdf
+**URL**: www.europeansocialsurvey.org
+http://www.europeansocialsurvey.org/docs/methodology/ESS_weighting_data_1.pdf
 
 **Rubrics**:
 
-**Score**:
+1. Can a survey statistician easily figure out how to declare the complex sampling features to survey analysis software for 
+design-based analysis?
+Yes. The European Social Survey is a repeated cross-sectional study conducted in about 30 different countries in Europe.
+Sampling is conducted within every country, using either listing methods or registers (of individuals or addresses). 
+Three weights (design, poststratification and population equivalence weights) are included in the main datafile. 
+This allows for Horvitz-Thomson estimation, but not the specification of a complex survey design.
+However, an Integrated Sample data file does include information on stratificiation or cluster variables, 
+as well as selection probabilities for every respondent. 
+On top of this, a multilevel file adds regional indicators to the main datafile, allowing for multilevel-analysis
 
+2. Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for 
+design-based analysis? 
+Yes, three weights are provided: a design weight, a poststratification weight and a population equivalence weight. 
+Guidance is included on how to comibine the three weights, and when to use what weight in some examples of analyses.
 
+3. Is everything that the data user needs to know about the complex sampling contained in one place?
+Documentation is scattered across many different documents and files on the ESS website. 
+However, most users in practice would use one round of ESS. 
+In that case, the country report files contain details on how fieldwork (including sampling) was conducted.
+One good aspect of the use of weights is that the users are explicitly warned that data need to be weighted when data are downloaded from the ESS website.
 
+4. Are examples of specific syntax for performing correct design-based analyses provided?
+No.
 
+5. Are examples of analyses need for addressing specific substantive questions provided?
+There are a few examples, but not including analysis syntax.
+
+6. (Bonus) Is an executive summary of the sample design provided?
+There is an executive summary that describes the basic sampling methodology. 
+There is no easily accessible executive summary that explains how and why sampling differs over the countries.
+
+7. (Bonus) What kinds of references are provided?
+There are references to standard textbooks on complex survey design, and references to other documents on the ESS website, with more detailed documentation
+
+Score: 5/7
 
 
 ### American Time Use Survey
