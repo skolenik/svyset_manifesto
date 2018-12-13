@@ -59,7 +59,8 @@ Why?
 Cluster, or multistage sampling design = sampling groups of units rather than the ultimate observation units.
 
 *  Geographic units (e.g., census tracts) in f2f samples
-*  Entities in natural hierarchies (e.g., hospitals/practices and providers within a practice)
+*  Entities in natural hierarchies (e.g. healt care providers within practices hospitals
+                                    e.g. students within classes within schools)
 
 Why?
 
@@ -76,27 +77,26 @@ Terminology: PSU = primary sampling unit = cluster
 
 Why?
 
-*  Oversample (smaller) subpopulations of interest (e.g., ethnic/racial minorities) that would not have sufficient sample
-   sizes in an equal probability of selection method (epsem) sample
-*  Oversample areas of higher concentration of the target rare population
+*  Directly oversample (smaller) subpopulations of interest (e.g., ethnic/racial minorities) that would not have sufficient   
+        sample sizes in an equal probability of selection method (epsem) sample
+*  Indirectly oversample, by selecting areas with higher concentration of the target rare population
 *  Result of multiple stage/cluster sampling
-   - Most f2f samples are design with probability proportional to size (PPS) sampling at the first few stages,
-            fixed sample size at last stage $\Rightarrow$ approximately EPSEM
-   -  If measures of sizes are not accurate, or differential nonresponse is encountered, no longer EPSEM
+   - Most f2f samples are designed with probability proportional to size (PPS) sampling at the first few stages,
+            fixed sample size at last stage $\Rightarrow$ approximately EPSEM. 
+            In many cases, the sample size at last stage of selection (e.g. the size of a household) is unknown in advance.
+   - If measures of sizes are not accurate, or nonresponse depends on cluster (size), no longer EPSEM
 *  Unintended result of multiple frame sampling
-    - dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected
+    - dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected.
 
 ### Weight adjustments
 
 Why? Corrections for...
 
 *  eligibility
-*  nonresponse (unavoidable in real world)
 *  frame noncoverage
 *  frame overlap in multiple frame surveys
 *  statistical efficiency
-
-Kalton, Flores-Cervantes (2003), Valliant, Dever, Kreuter (2013), Valliant and Dever (2017), Kolenikov (2016), etc.
+*  nonresponse (unavoidable in real world)
 
 ### Sampling is about doing the best job for the money
 
@@ -111,6 +111,25 @@ In the end of the day, all of the sampling features are there for 1+ of the foll
             - ... so have to sample a larger, general population, and screen out the eligible rare/hard to reach population
 *  Overcome the real world data collection difficulties
             -  nonresponse weight adjustments
+            
+As a result of all considerations above, most serious surveys that are using f2f or address-based sampling are using a complex 
+survey design in their fieldwork. Data resulting from the survey cannot be naively analyzed, but survey weights have to be used. 
+Survey statisticians routinely compute weights for users. These weights often take the form of a design weight that corrects for 
+eligibility, frame overlap, and unequal seelction probabilities in sampling. A separate nonresponse weight corrects for 
+nonresponse, and sometimes for noncoverage errors in the frame used. In some surveys additional weights are provided for the 
+purpose of doing cross-national comparisons (multi-country surveys) or longitudinal analysis (cohort or panel studies).
+For more information on how modern surveys are efficiently designed, and weights are computed, we refer the reader to Kalton, 
+Flores-Cervantes (2003), Lohr (2010), Bethlehem (2011), Valliant, Dever, Kreuter (2013), Valliant and Dever (2017) or Kolenikov 
+(2016). 
+The weights included in the dataset shouwl be accompanied with documentation on how the weights were computed and should be used 
+in practice by applied researchers. We have often encountered the documentation of survey weights to be inadequate. Sometimes, 
+details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. 
+This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for 
+example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' 
+(SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a rubric consisting 
+of [X] elements, and then use this rubric to discuss the survey documentation of [X] popular surveys. This paper is accompanied 
+by a website, where applied researchers can paste example code from SAS, STATA and R and generate corresponding code in other 
+software packages to facilitate the correct use of weights in future. https://statstas.shinyapps.io/svysettings/
 
 ## Survey settings in statistical software
 
@@ -326,19 +345,28 @@ https://statstas.shinyapps.io/svysettings/
 ## Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics
 
 1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
-This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied experience on par with or exceeding the Lumley (2010) or Heeringa, West and Berglund (2017) books.
+This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied 
+experience on par with or exceeding the Lumley (2010) or Heeringa, West and Berglund (2017) books.
 
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
-This would be a person who has some background / training in applied statistical analysis, but has only cursory knowledge of survey methodology, based on at most several hours of classroom instruction in their "methods" class or a short course at a conference.
+This would be a person who has some background / training in applied statistical analysis, but has only cursory knowledge of 
+survey methodology, based on at most several hours of classroom instruction in their "methods" class or a short course at a 
+conference.
 
 3. **Is everything described succinctly in one place, or scattered throughout the document?** 
-It is of course easier on the user when all the relevant information is easily available in a single section. However, some reports put information about weights in one place, e.g. where sampling was described, while information about other complex sampling features (e.g., cluster/strata/variance estimation) only appears some twenty pages away.
+It is of course easier on the user when all the relevant information is easily available in a single section. However, some 
+reports put information about weights in one place, e.g. where sampling was described, while information about other complex 
+sampling features (e.g., cluster/strata/variance estimation) only appears some twenty pages away.
 
 4. **Are examples of specific syntax to specify survey settings provided?** 
-Has the data producer provided worked and clearly-annotated examples of analyses of the complex sample survey data produced by a given survey using the syntax for existing procedures in one or more common statistical software packages? And as a bonus, have examples been provided in multiple languages (e.g., SAS, R, and Stata)? 
+Has the data producer provided worked and clearly-annotated examples of analyses of the complex sample survey data produced by a 
+given survey using the syntax for existing procedures in one or more common statistical software packages? And as a bonus, have 
+examples been provided in multiple languages (e.g., SAS, R, and Stata)? 
 
 5. **Are there examples given for how to answer substantive research questions?**
-In all languages, there are specific ways to run commands that are survey-design-aware. In other words, only specifying the design may not be sufficient in ensuring that estimation is done correctly. For instance, are examples provided for both descriptive and analytic (i.e., regression-driven) research questions?
+In all languages, there are specific ways to run commands that are survey-design-aware. In other words, only specifying the 
+design may not be sufficient in ensuring that estimation is done correctly. For instance, are examples provided for both 
+descriptive and analytic (i.e., regression-driven) research questions?
 
 6. (Bonus) **Is an executive summary description of the sample design available?**
 Many researchers would appreciate a two-three sentence paragraph to summarize the sampling design that
@@ -367,15 +395,24 @@ in technical literature describing the study, if appropriate. E.g., the descript
 of clustered sampling designs used in the U.S. Census Bureau large scale surveys
 such as the American Community Survey or Current Population Survey could refer 
 to the general description of stratified clustered surveys,
-to the user Handbooks, and to the technical papers on variance estimation ([Ash 2011](http://www.citeulike.org/user/ctacmo/article/13018645)).
+to the user Handbooks, and to the technical papers on variance estimation ([Ash 2011](http://www.citeulike.org/user/ctacmo
+/article/13018645)).
 
-(Secondary bonus) Are the references pointing out to sources other than the authors? (Chances are if there's a JSM Proceedings paper by the same group of authors, it won't be any clearer, frankly.)
+(Secondary bonus) Are the references pointing out to sources other than the authors? (Chances are if there's a JSM Proceedings 
+paper by the same group of authors, it won't be any clearer, frankly.)
 
-The seven rubrics defined here will be used below to "score" several existing examples of documentation for public-use survey data files based on these criteria. For example, if the documentation for a public-use data file successfully satisfies / meets the first five rubrics above, the documentation will be scored 5/5. These scores are designed to be **illustrative**, in terms of rating existing examples of documentation for public-use data files on how effectively they convey complex sampling features and how they should be employed in analysis to users. The scores are designed to motivate data producers to improve the clarity of their documentation for a variety of data users hoping to analyze large (and usually publically-funded) survey data sets.
+The seven rubrics defined here will be used below to "score" several existing examples of documentation for public-use survey 
+data files based on these criteria. For example, if the documentation for a public-use data file successfully satisfies / meets 
+the first five rubrics above, the documentation will be scored 5/5. These scores are designed to be **illustrative**, in terms 
+of rating existing examples of documentation for public-use data files on how effectively they convey complex sampling features 
+and how they should be employed in analysis to users. The scores are designed to motivate data producers to improve the clarity 
+of their documentation for a variety of data users hoping to analyze large (and usually publically-funded) survey data sets.
 
 ## Evaluating documentation in practice
 
-In this section, we will evaluate a convenience sample of the documentation for several public use survey data files (PUFs). We will apply the above rubrics to see how the documentation compares in terms of effectively describing appropriate analysis techniques to data users.
+In this section, we will evaluate a convenience sample of the documentation for several public use survey data files (PUFs). We 
+will apply the above rubrics to see how the documentation compares in terms of effectively describing appropriate analysis 
+techniques to data users.
 
 ### Dealing with existing documentation
 
@@ -463,16 +500,6 @@ that needs to be provided to data users to minimize the risk of analytic error
 due to a failure to account for complex sampling features.
 
 
-
-
-
-
-
-
-
-
-
-
 ### The Population Assessment of Tobacco and Health
 
 **Funding**: The Population Assessment of Tobacco and Health (PATH) Study is a collaboration 
@@ -491,10 +518,114 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 
 
+### Understanding Society
+
+:star: :star: :star: :star:
+
+**Funding**: Economic & Social Research Council (ESRC).
+
+**Data collection**: 
+- The Institute for Social and Economic Research (ISER), University of Essex
+- NatCen Social Research (wave 1-5) - Great Britian
+- Central Survey Unit of NISRA (wave 1-5)- Northern Ireland
+- Kantar Public UK (wave 6 onwards)
+
+**Host**: The UK data archive: https://discover.ukdataservice.ac.uk/series/?sn=2000053
+
+**URL**: https://discover.ukdataservice.ac.uk/series/?sn=2000053
+ - ps://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/mainstage/user-guides/mainstage-waves-1-7-user-guide.pdf
+
+**Rubrics**:
+
+1. **Can a survey statistician easily figure out how to declare the complex sampling features 
+to survey analysis software for design-based analysis?**
+yes. See the link above. The stratification is well decribed, both for Understanding Society, and it's predecessor, 
+The British Household Panel Study. The sample design is complex, as this study is longitudinal. 
+The study inclused refreshment samples to increase sample sizes, include minorities, and new regions into the study. 
+There are clear stratification variables available. As the study is a household study, no clustering is used.
 
 
+2. **Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for 
+design-based analysis? **
+Yes. The design of the study is highly complex however, and the applied researcher needs to have 
+a very clear definition of what the target population of their survey exactly is. 
+Guidance is provided on what survey weights to use depending on the choice of the target population, 
+but the description is technical.
+
+3. **Is everything that the data user needs to know about the complex sampling contained in one place?**
+Yes, section 3.9 of the user documentation includes all information. 
+
+4. **Are examples of specific syntax for performing correct design-based analyses provided?**
+Yes. Example `svyset` syntax for Stata is given.
+
+5. **Are examples of analyses need for addressing specific substantive questions provided?**
+Yes and no. The description is technical, and practical examples of the kind of questions 
+researchers would want to answer using this data may help users to select the right set of weights.
+
+6. **(Bonus) Is an executive summary of the sample design provided?**
+No. The sample design is also too complex for this.
+
+7. **(Bonus) What kinds of references are provided?**
+The documentation includes many references to additional papers and technical reports 
+written on the design and analysis of *Understanding Society* Data.
 
 
+**Score**: 6/7
+
+### European Social Survey ###
+
+:star: :star: :star: :star:
+
+**Funding**: European Commission, Horizon 2020. 
+Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments
+
+**Data collection**: coordinated by City University, London, UK. 
+Data collection in separate European Countries coordinated within every country. 
+
+**Host**: European Social Survey, formerly at Norwegian data Archive
+
+**URL**: www.europeansocialsurvey.org
+http://www.europeansocialsurvey.org/docs/methodology/ESS_weighting_data_1.pdf
+
+**Rubrics**:
+
+1. **Can a survey statistician easily figure out how to declare the complex sampling features 
+to survey analysis software for design-based analysis?**
+Yes. The European Social Survey is a repeated cross-sectional study conducted in about 30 different countries in Europe.
+Sampling is conducted within every country, using either listing methods or registers (of individuals or addresses). 
+Three weights (design, poststratification and population equivalence weights) are included in the main datafile. 
+This allows for Horvitz-Thompson estimation, but not the specification of a complex survey design.
+However, an Integrated Sample data file does include information on stratificiation or cluster variables, 
+as well as selection probabilities for every respondent. 
+On top of this, a multilevel file adds regional indicators to the main datafile, allowing for multilevel-analysis
+
+2. **Can an applied researcher easily figure out how to declare the complex sampling features 
+to survey analysis software for design-based analysis?** 
+Yes, three weights are provided: a design weight, a poststratification weight and a population equivalence weight. 
+Guidance is included on how to comibine the three weights, and when to use what weight in some examples of analyses.
+
+3. **Is everything that the data user needs to know about the complex sampling contained in one place?**
+Documentation is scattered across many different documents and files on the ESS website. 
+However, most users in practice would use one round of ESS. 
+In that case, the country report files contain details on how fieldwork (including sampling) was conducted.
+One good aspect of the use of weights is that the users are explicitly warned that data need to be weighted 
+when data are downloaded from the ESS website.
+
+4. **Are examples of specific syntax for performing correct design-based analyses provided?**
+No.
+
+5. **Are examples of analyses need for addressing specific substantive questions provided?**
+There are a few examples, but not including analysis syntax.
+
+6. **(Bonus) Is an executive summary of the sample design provided?**
+There is an executive summary that describes the basic sampling methodology. 
+There is no easily accessible executive summary that explains how and why sampling differs over the countries.
+
+7. **(Bonus) What kinds of references are provided?**
+There are references to standard textbooks on complex survey design, and references to other documents 
+on the ESS website, with more detailed documentation
+
+Score: 2/7
 
 
 ### American Time Use Survey
