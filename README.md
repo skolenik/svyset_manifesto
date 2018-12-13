@@ -23,7 +23,7 @@ with complex survey data; and of the developer of
 
 Brady T. West is Research Associate Professor
 in the [Survey Research Center](https://www.src.isr.umich.edu/) 
-at the [Institute for Social Research](http://www.isr.umich.edu/) on the University of Michigan-Ann Arbor campus.
+at the [Institute for Social Research](http://www.isr.umich.edu/) on the University of Michigan-Ann Arbor campus. His interest in this project arises from his recent NSF-funded work on analytic error (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0158120), suggesting that the majority of secondary analyses published in peer-reviewed journals do not correctly account for the features of complex sample designs in the estimation and inference process. 
 [@bradytwest](https://twitter.com/bradytwest) on Twitter.
 Website: http://www-personal.umich.edu/~bwest/
 
