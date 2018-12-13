@@ -469,7 +469,7 @@ to correctly declare complex sampling features to survey analysis software for d
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
 Yes. See above.
 
-**3. Is everything that the data user needs to know about the complex sampling contained in one place?** 
+3. **Is everything that the data user needs to know about the complex sampling contained in one place?** 
 Yes, although very little (if anything) is said about the actual complex sample design. 
 Instead this information appears in separate electronic files, such as 
 [Sample Design Documentation](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf). 
@@ -477,7 +477,7 @@ This is out of necessity, however, given the complexity of the NSFG sample desig
 and all of the information that a user needs to compute weighted point estimates and estimate variance 
 accounting for the complex sampling can be found in examples like the one indicated above.
 
-**4. Are examples of specific syntax for performing correct design-based analyses provided?**
+4. **Are examples of specific syntax for performing correct design-based analyses provided?**
 Yes. Three examples are clearly documented 
 ([tabulations for categorical variables](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf); 
 [means for continuous variables](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex2.pdf);
@@ -485,17 +485,17 @@ Yes. Three examples are clearly documented
 and linked on the main documentation page, and both syntax and output are included in each case. 
 Bonus: syntax and output are provided for both SAS and Stata.
 
-**5. Are examples of analyses need for addressing specific substantive questions provided?**
+5. **Are examples of analyses need for addressing specific substantive questions provided?**
 Yes; see previous item.
 
-**6. (Bonus) Is an executive summary of the sample design provided?**
+6. **(Bonus) Is an executive summary of the sample design provided?**
 Yes; such an executive summary is given in the first section of 
 [the main sample document](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013-2015_Sample_Design_Documentation.pdf)
 
-**7. (Bonus) What kinds of references are provided?**
+7. **(Bonus) What kinds of references are provided?**
 There are several references to the most important sample design literature included in Section 11 of the document linked above.
 
-**Score**: 7/5
+**Score**: 5++/5
 
 The NSFG provides an excellent example of the type of documentation 
 that needs to be provided to data users to minimize the risk of analytic error 
@@ -534,10 +534,10 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 **Host**: The UK data archive: https://discover.ukdataservice.ac.uk/series/?sn=2000053
 
-**URL**: https://discover.ukdataservice.ac.uk/series/?sn=2000053
+**URL**: https://www.understandingsociety.ac.uk/
 
 User Guide, including information on sampling design and weighting:
-https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/mainstage/user-guides/mainstage-waves-1-7-user-guide.pdf
+https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/mainstage/user-guides/mainstage-user-guide.pdf
 
 **Rubrics**:
 
@@ -578,10 +578,11 @@ written on the design and analysis of *Understanding Society* Data.
 
 **Score**: 2+/5
 
-*Understanding Society* is a very complex survey. While technical documentation is excellent,
-guidance for applied researchers is between limited and confusing. 
+*Understanding Society* is a very complex survey. While technical documentation is excellent
+for its technical purposes, guidance for applied researchers is between limited and confusing. 
 Examples in Stata and SPSS are provided, but either cover data management, or provide
-examples of basic *unweighted* analyses.
+examples of basic *unweighted* analyses, i.e., do not help the researchers to set the data up
+for correct analysis that would account for the complex sampling nature of the survey.
 
 ### European Social Survey ###
 
