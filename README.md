@@ -1,6 +1,6 @@
 # How to specify survey settings
 
-## Stas Kolenikov, Brady West, Peter Lugtig
+## Stas Kolenikov, Brady T. West, Peter Lugtig
 
 In this repository, we document our understanding of, and recommendations for, 
 appropriate best practices in specifying the complex sampling design settings 
@@ -21,9 +21,9 @@ of an occasional continuing education instructor teaching courses on survey desi
 with complex survey data; and of the developer of 
 [statistical software for survey weight calibration](https://econpapers.repec.org/software/bocbocode/s458430.htm).
 
-Brady West is Associate Research Professor
-in the [Michigan Program in Survey Methodology](http://www.isr.umich.edu/gradprogram/) 
-at the [Institute for Social Research](http://www.isr.umich.edu/),  University of Michigan-Ann Arbor.
+Brady T. West is Research Associate Professor
+in the [Survey Research Center](https://www.src.isr.umich.edu/) 
+at the [Institute for Social Research](http://www.isr.umich.edu/) on the University of Michigan-Ann Arbor campus.
 [@bradytwest](https://twitter.com/bradytwest) on Twitter.
 Website: http://www-personal.umich.edu/~bwest/
 
