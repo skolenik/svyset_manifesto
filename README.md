@@ -570,14 +570,14 @@ The documentation includes many references to additional papers and technical re
 written on the design and analysis of *Understanding Society* Data.
 
 
-**Score**: 6/7
+**Score**: 4+/5
 
 ### European Social Survey ###
 
-:star: :star: :star: :star:
+:star: :star: ☆ ☆ ☆
 
 **Funding**: European Commission, Horizon 2020. 
-Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments
+Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments.
 
 **Data collection**: coordinated by City University, London, UK. 
 Data collection in separate European Countries coordinated within every country. 
@@ -585,12 +585,13 @@ Data collection in separate European Countries coordinated within every country.
 **Host**: European Social Survey, formerly at Norwegian data Archive
 
 **URL**: www.europeansocialsurvey.org
+
+Weighting documentation:
 http://www.europeansocialsurvey.org/docs/methodology/ESS_weighting_data_1.pdf
 
 **Rubrics**:
 
-1. **Can a survey statistician easily figure out how to declare the complex sampling features 
-to survey analysis software for design-based analysis?**
+1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
 Yes. The European Social Survey is a repeated cross-sectional study conducted in about 30 different countries in Europe.
 Sampling is conducted within every country, using either listing methods or registers (of individuals or addresses). 
 Three weights (design, poststratification and population equivalence weights) are included in the main datafile. 
@@ -599,8 +600,7 @@ However, an Integrated Sample data file does include information on stratificiat
 as well as selection probabilities for every respondent. 
 On top of this, a multilevel file adds regional indicators to the main datafile, allowing for multilevel-analysis
 
-2. **Can an applied researcher easily figure out how to declare the complex sampling features 
-to survey analysis software for design-based analysis?** 
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
 Yes, three weights are provided: a design weight, a poststratification weight and a population equivalence weight. 
 Guidance is included on how to comibine the three weights, and when to use what weight in some examples of analyses.
 
@@ -625,7 +625,7 @@ There is no easily accessible executive summary that explains how and why sampli
 There are references to standard textbooks on complex survey design, and references to other documents 
 on the ESS website, with more detailed documentation
 
-Score: 2/7
+Score: 2/5
 
 
 ### American Time Use Survey
