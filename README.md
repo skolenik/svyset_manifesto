@@ -459,13 +459,15 @@ replicate variance estimation methods.
 
 **Rubrics**: 
 
-1. **Can a survey statistician easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?** Yes. Electronic documents like 
+1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
+Yes. Electronic documents like 
 [Example 1: Variance Estimates for Percentages](https://www.cdc.gov/nchs/data/nsfg/NSFG_2013_2015_VarEst_Ex1.pdf) 
 linked from the [documentation page](https://www.cdc.gov/nchs/nsfg/nsfg_2013_2015_puf.htm) 
 under *Variance estimation* subtitle make it very easy for survey statisticians and applied researchers alike 
 to correctly declare complex sampling features to survey analysis software for design-based analyses.
 
-2. **Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for design-based analysis?** Yes. See above.
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+Yes. See above.
 
 **3. Is everything that the data user needs to know about the complex sampling contained in one place?** 
 Yes, although very little (if anything) is said about the actual complex sample design. 
@@ -518,9 +520,9 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 
 
 
-### Understanding Society
+### Understanding Society (Waves 1--8)
 
-:star: :star: :star: :star:
+:star: :star: 
 
 **Funding**: Economic & Social Research Council (ESRC).
 
@@ -533,33 +535,38 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 **Host**: The UK data archive: https://discover.ukdataservice.ac.uk/series/?sn=2000053
 
 **URL**: https://discover.ukdataservice.ac.uk/series/?sn=2000053
- - ps://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/mainstage/user-guides/mainstage-waves-1-7-user-guide.pdf
+
+User Guide, including information on sampling design and weighting:
+https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentation/mainstage/user-guides/mainstage-waves-1-7-user-guide.pdf
 
 **Rubrics**:
 
-1. **Can a survey statistician easily figure out how to declare the complex sampling features 
-to survey analysis software for design-based analysis?**
-yes. See the link above. The stratification is well decribed, both for Understanding Society, and it's predecessor, 
+1. **Can a survey statistician figure out how to declare the complex sampling features?**
+Yes. See the link above. The stratification is well decribed, both for Understanding Society, and it's predecessor, 
 The British Household Panel Study. The sample design is complex, as this study is longitudinal. 
-The study inclused refreshment samples to increase sample sizes, include minorities, and new regions into the study. 
-There are clear stratification variables available. As the study is a household study, no clustering is used.
+The study inclused refreshment samples to increase sample sizes, include minorities, and add new regions into the study. 
+Sampling design variables are described in Section 3.2.7 of the User Guide referenced above.
 
-
-2. **Can an applied researcher easily figure out how to declare the complex sampling features to survey analysis software for 
-design-based analysis? **
-Yes. The design of the study is highly complex however, and the applied researcher needs to have 
-a very clear definition of what the target population of their survey exactly is. 
-Guidance is provided on what survey weights to use depending on the choice of the target population, 
-but the description is technical.
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+This is problematic given the complexity of the design, and the different populations
+that this data set could be used to analyze (e.g., the latest cross-section, panel based on BHPS starting Wave 1,
+panel based on BHPS, GPS and EMBS starting from Wave 2, etc.).
+The applied researcher needs to have 
+a very clear definition of what the target population of their analysis exactly is. 
+Guidance is provided on what survey weights to use depending on the choice of the target population
+in Section 3.3.1 of the above referenced User Guide, but the description is highly technical.
 
 3. **Is everything that the data user needs to know about the complex sampling contained in one place?**
-Yes, section 3.9 of the user documentation includes all information. 
+Yes, Section 3.2.7 of the User Guide referenced above includes all information. 
 
 4. **Are examples of specific syntax for performing correct design-based analyses provided?**
-Yes. Example `svyset` syntax for Stata is given.
+No. Examples are provided for data management tasks such as combining waves or identifying individuals within
+households, but no `svyset` syntax is provided.
 
 5. **Are examples of analyses need for addressing specific substantive questions provided?**
-Yes and no. The description is technical, and practical examples of the kind of questions 
+There are examples of the code provided, but these analysis are unweighted,
+and thus aruably misleading.
+The description is technical, and practical examples of the kind of questions 
 researchers would want to answer using this data may help users to select the right set of weights.
 
 6. **(Bonus) Is an executive summary of the sample design provided?**
@@ -569,12 +576,16 @@ No. The sample design is also too complex for this.
 The documentation includes many references to additional papers and technical reports 
 written on the design and analysis of *Understanding Society* Data.
 
+**Score**: 2+/5
 
-**Score**: 4+/5
+*Understanding Society* is a very complex survey. While technical documentation is excellent,
+guidance for applied researchers is between limited and confusing. 
+Examples in Stata and SPSS are provided, but either cover data management, or provide
+examples of basic *unweighted* analyses.
 
 ### European Social Survey ###
 
-:star: :star: ☆ ☆ ☆
+:star: :star: 
 
 **Funding**: European Commission, Horizon 2020. 
 Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments.
@@ -615,7 +626,7 @@ when data are downloaded from the ESS website.
 No.
 
 5. **Are examples of analyses need for addressing specific substantive questions provided?**
-There are a few examples, but not including analysis syntax.
+There are a few examples of data management code, but not including analysis syntax.
 
 6. **(Bonus) Is an executive summary of the sample design provided?**
 There is an executive summary that describes the basic sampling methodology. 
@@ -625,7 +636,7 @@ There is no easily accessible executive summary that explains how and why sampli
 There are references to standard textbooks on complex survey design, and references to other documents 
 on the ESS website, with more detailed documentation
 
-Score: 2/5
+**Score**: 2/5
 
 
 ### American Time Use Survey
@@ -665,7 +676,7 @@ Score: 2/5
 
 ### A Portrait of Jewish Americans
 
-⭐⭐⭐⭐☆
+⭐⭐⭐⭐
 
 **Funding**: The Pew Research Center’s 2013 survey of U.S. Jews was conducted by the 
 center’s Religion & Public Life Project with generous funding from 
