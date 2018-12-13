@@ -103,14 +103,19 @@ Why? Corrections for...
 In the end of the day, all of the sampling features are there for 1+ of the following reasons:
 
 *  Save money
-            - use cluster samples to save on travel costs
-            - use stratified samples to realize statistical efficiency gains
+
+   - use cluster samples to save on travel costs
+   - use stratified samples to realize statistical efficiency gains
+            
 *  Cannot get the full population listing
-            - ... so have to use area samples to gradually zoom down to individuals
-            - ... so have to use infrastructure created for a different purpose (telecom or postal) to contact people
-            - ... so have to sample a larger, general population, and screen out the eligible rare/hard to reach population
+
+   - ... so have to use area samples to gradually zoom down to individuals
+   - ... so have to use infrastructure created for a different purpose (telecom or postal) to contact people
+   - ... so have to sample a larger, general population, and screen out the eligible rare/hard to reach population
+            
 *  Overcome the real world data collection difficulties
-            -  nonresponse weight adjustments
+
+   -  nonresponse weight adjustments
             
 As a result of all considerations above, most serious surveys that are using f2f or address-based sampling are using a complex 
 survey design in their fieldwork. Data resulting from the survey cannot be naively analyzed, but survey weights have to be used. 
@@ -126,9 +131,12 @@ in practice by applied researchers. We have often encountered the documentation 
 details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. 
 This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for 
 example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' 
-(SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a rubric consisting 
-of [X] elements, and then use this rubric to discuss the survey documentation of [X] popular surveys. This paper is accompanied 
-by a website, where applied researchers can paste example code from SAS, STATA and R and generate corresponding code in other 
+(SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting 
+of fie main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys
+originating in the U.S., U.K. and Europe. 
+
+This paper is accompanied 
+by a website, where applied researchers can paste example code from SAS, Stata and R and generate corresponding code in other 
 software packages to facilitate the correct use of weights in future. https://statstas.shinyapps.io/svysettings/
 
 ## Survey settings in statistical software
