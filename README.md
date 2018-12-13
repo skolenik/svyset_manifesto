@@ -741,3 +741,11 @@ tables in the substantive report, are provided.
 **Rubrics**: how well the documentation matches the desired criteria
 
 **Score**:
+
+## Acknowledgements
+
+The initial impetus for this work came from the AAPOR presentation
+by Margaret Levenstein on how ICPSR handles meta data of the surveys they 
+store and distribute, and from 
+[the discussion on Twitter that followed](https://twitter.com/MaryELosch/status/997213578917707778).
+
