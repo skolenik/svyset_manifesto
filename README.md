@@ -37,6 +37,8 @@ in the School of Social and Behavioural Sciences, University of Utrecht.
 [@PeterLugtig](https://twitter.com/PeterLugtig) on Twitter.
 Website: http://www.peterlugtig.com/
 
+___
+
 ## Survey sampling features
 
 We focus on the "big four" features of complex sampling designs: stratification, cluster sampling, unequal probabilities of selection, and weight adjustments. Each design feature is described in more detail below.
@@ -126,6 +128,8 @@ Flores-Cervantes (2003), Lohr (2010), Bethlehem (2011), Valliant, Dever, Kreuter
 The weights included in the dataset should be accompanied with detailed documentation on how the weights were computed and should be used in practice by applied researchers. We have often found that the documentation of survey weights is inadequate. Sometimes, details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' (SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting of five main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys originating in the U.S., U.K. and Europe. 
 
 This paper is accompanied by a website, where applied researchers can paste example code from SAS, Stata and R and generate corresponding code in other software packages to facilitate the correct use of weights in future. Please visit https://statstas.shinyapps.io/svysettings/ for details.
+
+___
 
 ## Survey settings in statistical software
 
@@ -337,6 +341,7 @@ https://github.com/skolenik/ICHPS2018-svy
 
 https://statstas.shinyapps.io/svysettings/
 
+___
 
 ## Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics
 
@@ -430,6 +435,7 @@ the variables that needed to be specified in survey settings.
 6. Search for "*replicate weights*", "*BRR*", "*jackknife*" and "*bootstrap*", the keywords for the popular
 replicate variance estimation methods.
 
+___
 
 ### The National Survey of Family Growth (NSFG), 2013--2015
 
@@ -498,6 +504,7 @@ The NSFG provides an excellent example of the type of documentation
 that needs to be provided to data users to minimize the risk of analytic error 
 due to a failure to account for complex sampling features.
 
+___
 
 ### The Population Assessment of Tobacco and Health
 
@@ -516,10 +523,15 @@ and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA).
 **Rubrics**: 
 
 1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
-Yes. Section 5 of the Public-Use Files User Guide provides clear detail on the calculation and names of the various weight variables that can be used for estimation. This section also discusses variance estimation, and clearly describes the replicate weights that have been prepared for data users enabling variance estimation. Software options are also discussed in this section, and code illustrating the use of multiple programs for example analyses is provided in Appendix A.
+Yes. Section 5 of the Public-Use Files User Guide provides clear detail on the calculation and names 
+of the various weight variables that can be used for estimation. This section also discusses variance estimation, 
+and clearly describes the replicate weights that have been prepared for data users enabling variance estimation. 
+Software options are also discussed in this section, and code illustrating the use of multiple programs 
+for the protype example analyses is provided in Appendix A.
 
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
-Yes. While Section 5 provides enough detail for survey statisticians, it can also be easily interpreted by data users interested in secondary analyses. Appendix A is especially helpful, given that it provides annotated example code for several different packages.
+Yes. Appendix A of the User Guid is very helpful, given that it provides annotated example code for several different packages.
+Section 5 is aimed at survey statisticians, and will be overwhelming to the audience that is less technically prepared.
 
 3. **Is everything that the data user needs to know about the complex sampling contained in one place?** 
 Yes; Section 5 provides all of the necessary sampling information for analysis purposes, and Appendix A contains all of the necessary code for actual practice.
@@ -538,8 +550,10 @@ There are several references to the most important sample design literature incl
 
 **Score**: 5++/5
 
-The PATH PUF user guide is another excellent, gold-standard example of detailed and useful information designed to make the life of the survey data user easier. 
+The PATH PUF user guide is another excellent, gold-standard example of detailed and useful information 
+designed to make the life of the survey data user easier. 
 
+___
 
 ### Understanding Society (Waves 1--8)
 
@@ -605,6 +619,8 @@ Examples in Stata and SPSS are provided, but either cover data management, or pr
 examples of basic *unweighted* analyses, i.e., do not help the researchers to set the data up
 for correct analysis that would account for the complex sampling nature of the survey.
 
+___
+
 ### European Social Survey ###
 
 ⭐⭐ 
@@ -660,6 +676,7 @@ on the ESS website, with more detailed documentation
 
 **Score**: 2/5
 
+___
 
 ### American Time Use Survey
 
@@ -677,7 +694,7 @@ on the ESS website, with more detailed documentation
 
 
 
-
+___
 
 ### India Human Development Survey
 
@@ -693,7 +710,7 @@ on the ESS website, with more detailed documentation
 
 **Score**:
 
-
+___
 
 
 ### A Portrait of Jewish Americans
@@ -748,6 +765,7 @@ Slight limitations of the documentation is that examples of the settings are onl
 given for one package, Stata, and no examples of substantive analyses, e.g. those leading to the primary
 tables in the substantive report, are provided.
 
+___
 
 ### Survey name
 
@@ -762,6 +780,8 @@ tables in the substantive report, are provided.
 **Rubrics**: how well the documentation matches the desired criteria
 
 **Score**:
+
+___
 
 ## Acknowledgements
 
