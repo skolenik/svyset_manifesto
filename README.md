@@ -23,7 +23,11 @@ with complex survey data; and of the developer of
 
 Brady T. West is Research Associate Professor
 in the [Survey Research Center](https://www.src.isr.umich.edu/) 
-at the [Institute for Social Research](http://www.isr.umich.edu/) on the University of Michigan-Ann Arbor campus. His interest in this project arises from his recent NSF-funded work on analytic error (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0158120), suggesting that the majority of secondary analyses published in peer-reviewed journals do not correctly account for the features of complex sample designs in the estimation and inference process. 
+at the [Institute for Social Research](http://www.isr.umich.edu/) on the University of Michigan-Ann Arbor campus. 
+His interest in this project arises from his recent NSF-funded work on analytic error 
+(https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0158120), 
+suggesting that the majority of secondary analyses published in peer-reviewed journals 
+do not correctly account for the features of complex sample designs in the estimation and inference process. 
 [@bradytwest](https://twitter.com/bradytwest) on Twitter.
 Website: http://www-personal.umich.edu/~bwest/
 
@@ -386,9 +390,10 @@ the JSM or AAPOR proceedings, technical reports on the provider website, or publ
 in technical literature describing the study, if appropriate. E.g., the description
 of clustered sampling designs used in the U.S. Census Bureau large scale surveys
 such as the American Community Survey or Current Population Survey could refer 
-to the general description of stratified clustered surveys,
-to the user Handbooks, and to the technical papers on variance estimation ([Ash 2011](http://www.citeulike.org/user/ctacmo
-/article/13018645)).
+to general descriptions of stratified clustered surveys, to the user Handbooks 
+([*What Researchers Need to Know* ACS Handbook (Census Bureau 2009)](https://www.census.gov/library/publications/2009/acs/researchers.html)), 
+and to the technical papers on variance estimation 
+([Ash 2011](http://www.citeulike.org/user/ctacmo/article/13018645)).
 
 (Secondary bonus) Are the references pointing out to sources other than the authors? (Chances are if there's a JSM Proceedings 
 paper by the same group of authors, it won't be any clearer, frankly.)
