@@ -35,17 +35,17 @@ Website: http://www.peterlugtig.com/
 
 ## Survey sampling features
 
-Big four: strata, clusters, unequal probabilities, weight adjustments.
+We focus on the "big four" features of complex sampling designs: stratification, cluster sampling, unequal probabilities of selection, and weight adjustments. Each design feature is described in more detail below.
 
 ### Stratification
 
-Stratification = breaking up the population/frames into mutually exclusive groups before sampling.
+Stratification = breaking up the population/frames into mutually exclusive groups (strata) before sampling. Common examples of strata include:
 
 *  Geographic regions for in-person samples
 *  Diagnostic groups for patient list samples
 *  Industry and/or employment size and/or geographical regions for establishment samples
 
-Why?
+Why do complex sampling designs employ stratification?
 
 *  Oversample subpopulations of interest if they can be identified on the frame(s)
 *  Oversample areas of higher concentration of the target rare population (c.f. http://www.asasrms.org/Proceedings/y2006/Files/JSM2006-000557.pdf)
@@ -54,53 +54,47 @@ Why?
 *  Balance things around/avoid weird outlying samples/spread the sample across the whole population
 *  Optimize costs vs. precision via [Neyman-Chuprow](https://support.sas.com/documentation/cdl/en/statug/63962/HTML/default/viewer.htm#statug_surveyselect_a0000000208.htm) or more complicated allocations
 
-### Cluster samples
+### Cluster Sampling
 
-Cluster, or multistage sampling design = sampling groups of units rather than the ultimate observation units.
+Cluster, or multistage sampling design = sampling groups of units (clusters), rather than the ultimate observation units. Common examples of randomly sampled clusters include:
 
-*  Geographic units (e.g., census tracts) in f2f samples
-*  Entities in natural hierarchies (e.g. healt care providers within practices hospitals
-                                    e.g. students within classes within schools)
+*  Geographic units (e.g., census tracts) in face-to-face surveys
+*  Entities in natural hierarchies (e.g. health care providers within practices within hospitals, or students within classes within schools)
 
-Why?
+Why do complex sampling designs employ cluster sampling?
 
-*  Complete lists of all units are not available, but survey statistician
-        can obtain lists of administrative units
-        for which residence or other relevant eligibility status of observation units
-        can be easily identified
-*  Reduce interviewer travel time/cost in f2f surveys
-*  Interest in multilevel modeling of hierarchical structures
+*  Complete lists of all units are not available, but the survey statistician can obtain lists of administrative units for which residence or other relevant eligibility status of observation units can be easily identified
+*  Reduce interviewer travel time/cost in face-to-face surveys
+*  Analytic interest in multilevel modeling of hierarchical structures
 
-Terminology: PSU = primary sampling unit = cluster
+Terminology: PSU = primary sampling unit = cluster for analytic purposes
 
-### Unequal probabilities of selection
+### Unequal Probabilities of Selection
 
-Why?
+Why do complex sampling designs assign unequal probabilities of selection to different population units?
 
 *  Directly oversample (smaller) subpopulations of interest (e.g., ethnic/racial minorities) that would not have sufficient   
         sample sizes in an equal probability of selection method (epsem) sample
-*  Indirectly oversample, by selecting areas with higher concentration of the target rare population
+*  Indirectly oversample, by selecting areas with a higher concentration of the target rare population
 *  Result of multiple stage/cluster sampling
-   - Most f2f samples are designed with probability proportional to size (PPS) sampling at the first few stages,
-            fixed sample size at last stage $\Rightarrow$ approximately EPSEM. 
-            In many cases, the sample size at last stage of selection (e.g. the size of a household) is unknown in advance.
-   - If measures of sizes are not accurate, or nonresponse depends on cluster (size), no longer EPSEM
+   - Most samples for face-to-face surveys are designed with probability proportional to size (PPS) sampling at the first few stages, fixed sample size at last stage $\Rightarrow$ approximately EPSEM. In many cases, the sample size at last stage of selection (e.g. the size of a household) is unknown in advance.
+   - If measures of sizes are not accurate, or nonresponse depends on cluster (size), no longer EPSEM.
 *  Unintended result of multiple frame sampling
     - dual phone users, i.e., those who have both landline and cell phone service, are more likely to be selected.
 
-### Weight adjustments
+### Weight Adjustments
 
-Why? Corrections for...
+Why are design weights (computed as the inverse of the probability of selection) adjusted further? These adjustments are designed to be corrections for...
 
 *  eligibility
 *  frame noncoverage
 *  frame overlap in multiple frame surveys
 *  statistical efficiency
-*  nonresponse (unavoidable in real world)
+*  nonresponse (unavoidable in the real world)
 
-### Sampling is about doing the best job for the money
+### Sampling is about doing the best job for the money!
 
-In the end of the day, all of the sampling features are there for 1+ of the following reasons:
+At the end of the day, all of the complex sampling features described above are employed for 1+ of the following reasons:
 
 *  Save money
 
@@ -113,12 +107,11 @@ In the end of the day, all of the sampling features are there for 1+ of the foll
    - ... so have to use infrastructure created for a different purpose (telecom or postal) to contact people
    - ... so have to sample a larger, general population, and screen out the eligible rare/hard to reach population
             
-*  Overcome the real world data collection difficulties
+*  Overcome real world data collection difficulties
 
    -  nonresponse weight adjustments
             
-As a result of all considerations above, most serious surveys that are using f2f or address-based sampling are using a complex 
-survey design in their fieldwork. Data resulting from the survey cannot be naively analyzed, but survey weights have to be used. 
+As a result of all considerations above, most serious surveys that are using face-to-face data collection or address-based sampling are using a complex sample design in their fieldwork. Data resulting from the survey cannot be naively analyzed, and survey weights have to be used. 
 Survey statisticians routinely compute weights for users. These weights often take the form of a design weight that corrects for 
 eligibility, frame overlap, and unequal seelction probabilities in sampling. A separate nonresponse weight corrects for 
 nonresponse, and sometimes for noncoverage errors in the frame used. In some surveys additional weights are provided for the 
@@ -126,28 +119,19 @@ purpose of doing cross-national comparisons (multi-country surveys) or longitudi
 For more information on how modern surveys are efficiently designed, and weights are computed, we refer the reader to Kalton, 
 Flores-Cervantes (2003), Lohr (2010), Bethlehem (2011), Valliant, Dever, Kreuter (2013), Valliant and Dever (2017) or Kolenikov 
 (2016). 
-The weights included in the dataset shouwl be accompanied with documentation on how the weights were computed and should be used 
-in practice by applied researchers. We have often encountered the documentation of survey weights to be inadequate. Sometimes, 
-details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. 
-This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for 
-example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' 
-(SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting 
-of fie main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys
-originating in the U.S., U.K. and Europe. 
+The weights included in the dataset should be accompanied with detailed documentation on how the weights were computed and should be used in practice by applied researchers. We have often found that the documentation of survey weights is inadequate. Sometimes, details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' (SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting of five main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys originating in the U.S., U.K. and Europe. 
 
-This paper is accompanied 
-by a website, where applied researchers can paste example code from SAS, Stata and R and generate corresponding code in other 
-software packages to facilitate the correct use of weights in future. https://statstas.shinyapps.io/svysettings/
+This paper is accompanied by a website, where applied researchers can paste example code from SAS, Stata and R and generate corresponding code in other software packages to facilitate the correct use of weights in future. Please visit https://statstas.shinyapps.io/svysettings/ for details.
 
 ## Survey settings in statistical software
 
-The most common public use data file specification of an areal probability sampling design is that
-of a two-stage stratified clustered sample. It is nearly always an approximation to the true design,
+The most common public use data file specification of an area probability sampling design is that
+of a two-stage stratified clustered sample. It is nearly always an approximation to the true sampling design,
 as most typically the design would include more stages, and some additional modifications of the 
 sampling design variables would be undertaken: true sampling strata or units would be combined
 or split, units would be swapped with one another, etc., typically in order to mask the true geographical
 locations of respondents, as geography is one of the strongest factors putting individuals
-at risk of identification and disclosure.
+at risk of identification and disclosure (Heeringa et al., 2017, Chapter 4).
 
 In the examples below, we provide the following semi-standardized examples:
 
@@ -172,7 +156,7 @@ In addition, three analyses are discussed:
 
 ### R
 
-Implementation of complex survey estimation in `library(survey)` separates the steps of declaring the sampling design
+Implementation of complex sample survey estimation in `library(survey)` separates the steps of declaring the sampling design
 and running estimation.
 
 (In terms of reading the input data, we assume that the user follows the best practices of workflow management
@@ -409,7 +393,7 @@ to the user Handbooks, and to the technical papers on variance estimation ([Ash 
 (Secondary bonus) Are the references pointing out to sources other than the authors? (Chances are if there's a JSM Proceedings 
 paper by the same group of authors, it won't be any clearer, frankly.)
 
-The seven rubrics defined here will be used below to "score" several existing examples of documentation for public-use survey 
+We now use the seven rubrics defined above to "score" several existing examples of documentation for public-use survey 
 data files based on these criteria. For example, if the documentation for a public-use data file successfully satisfies / meets 
 the first five rubrics above, the documentation will be scored 5/5. These scores are designed to be **illustrative**, in terms 
 of rating existing examples of documentation for public-use data files on how effectively they convey complex sampling features 
@@ -512,25 +496,49 @@ due to a failure to account for complex sampling features.
 
 ### The Population Assessment of Tobacco and Health
 
+⭐⭐⭐⭐⭐
+
 **Funding**: The Population Assessment of Tobacco and Health (PATH) Study is a collaboration 
 between the National Institute on Drug Abuse (NIDA), National Institutes of Health (NIH), 
 and the Center for Tobacco Products (CTP), Food and Drug Administration (FDA). 
 
-**Data collection**: the organization who collected and documented the data
+**Data collection**: Westat (http://www.westat.com)
 
-**Host**: the organization that hosts the data
+**Host**: The National Addiction and HIV Data Archive Program
 
-**URL**: 
+**URL**: https://www.icpsr.umich.edu/icpsrweb/NAHDAP/series/606
 
-**Rubrics**: how well the documentation matches the desired criteria
+**Rubrics**: 
 
-**Score**:
+1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
+Yes. Section 5 of the Public-Use Files User Guide provides clear detail on the calculation and names of the various weight variables that can be used for estimation. This section also discusses variance estimation, and clearly describes the replicate weights that have been prepared for data users enabling variance estimation. Software options are also discussed in this section, and code illustrating the use of multiple programs for example analyses is provided in Appendix A.
 
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+Yes. While Section 5 provides enough detail for survey statisticians, it can also be easily interpreted by data users interested in secondary analyses. Appendix A is especially helpful, given that it provides annotated example code for several different packages.
+
+3. **Is everything that the data user needs to know about the complex sampling contained in one place?** 
+Yes; Section 5 provides all of the necessary sampling information for analysis purposes, and Appendix A contains all of the necessary code for actual practice.
+
+4. **Are examples of specific syntax for performing correct design-based analyses provided?**
+Yes. Appendix A of the Public-Use Files User Guide is an excellent example of providing this kind of resource for data users.
+
+5. **Are examples of analyses needed for addressing specific substantive questions provided?**
+Yes. Appendix A illustrates a variety of potential analyses that data users could perform.
+
+6. **(Bonus) Is an executive summary of the sample design provided?**
+Chapter 2 of the User Guide provides a detailed summary of the sample design, which serves as an executive summary.
+
+7. **(Bonus) What kinds of references are provided?**
+There are several references to the most important sample design literature included at the end of the User Guide.
+
+**Score**: 5++/5
+
+The PATH PUF user guide is another excellent, gold-standard example of detailed and useful information designed to make the life of the survey data user easier. 
 
 
 ### Understanding Society (Waves 1--8)
 
-:star: :star: 
+⭐⭐
 
 **Funding**: Economic & Social Research Council (ESRC).
 
@@ -594,7 +602,7 @@ for correct analysis that would account for the complex sampling nature of the s
 
 ### European Social Survey ###
 
-:star: :star: 
+⭐⭐ 
 
 **Funding**: European Commission, Horizon 2020. 
 Rounds 1-7 of ESS have been founded by national science foundations and/or European national governments.
