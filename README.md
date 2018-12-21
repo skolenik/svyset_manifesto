@@ -530,8 +530,8 @@ Software options are also discussed in this section, and code illustrating the u
 for the protype example analyses is provided in Appendix A.
 
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
-Yes. Appendix A of the User Guid is very helpful, given that it provides annotated example code for several different packages.
-Section 5 is aimed at survey statisticians, and will be overwhelming to the audience that is less technically prepared.
+Yes. Appendix A of the User Guide is very helpful, given that it provides annotated example code for several different packages.
+Section 5 is aimed at survey statisticians, and will be overwhelming to an audience that is less technically prepared.
 
 3. **Is everything that the data user needs to know about the complex sampling contained in one place?** 
 Yes; Section 5 provides all of the necessary sampling information for analysis purposes, and Appendix A contains all of the necessary code for actual practice.
@@ -658,7 +658,7 @@ Documentation is scattered across many different documents and files on the ESS 
 However, most users in practice would use one round of ESS. 
 In that case, the country report files contain details on how fieldwork (including sampling) was conducted.
 One good aspect of the use of weights is that the users are explicitly warned that data need to be weighted 
-when data are downloaded from the ESS website.
+when data are downloaded from the ESS website. However, there isn't an accompanying warning about using the sample design variables for variance estimation as well.
 
 4. **Are examples of specific syntax for performing correct design-based analyses provided?**
 No.
@@ -672,7 +672,7 @@ There is no easily accessible executive summary that explains how and why sampli
 
 7. **(Bonus) What kinds of references are provided?**
 There are references to standard textbooks on complex survey design, and references to other documents 
-on the ESS website, with more detailed documentation
+on the ESS website, with more detailed documentation.
 
 **Score**: 2/5
 
@@ -696,19 +696,42 @@ ___
 
 ___
 
-### India Human Development Survey
+### The 2005 India Human Development Survey
 
-**Funding**: 
+⭐
 
-**Data collection**: the organization who collected and documented the data
+**Funding**: NIH Grants R01HD041455 and R01HD046166.
 
-**Host**: the organization that hosts the data
+**Data collection**: Per the user guide, the fieldwork was carried out by 24 collaborating institutions under the supervision of the National Council of Applied Economic Research (NCAER) in New Delhi. Interviewers were hired by the institutions and trained by personnel from the University of Maryland and NCAER.
+
+**Host**: The data are hosted by ICPSR (see web site below).
 
 **URL**: https://www.icpsr.umich.edu/icpsrweb/content/DSDR/idhs-data-guide.html
 
-**Rubrics**: how well the documentation matches the desired criteria
+**Rubrics**: 
 
-**Score**:
+1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
+No. Even after reviewing the technical documentation (https://ihds.umd.edu/sites/ihds.umd.edu/files/publications/papers/technical%20paper%201.pdf) in addition to the user guide, it is still unclear exactly what variable(s) should be used in variance estimation to reflect the stratification and cluster sampling that was performed. Reading carefully enough reveals the weights that should be used to compute population estimates at the individual or household level (SWEIGHT), but nothing is said about the appropriate design variables (stratum codes, PSU codes) in the data files. Complicating matters is the fact that two apparent PSU variables (IDPSU and PSUID) appear in the data file, with no mention of which one should be used for variance estimation and no references to an appropriate stratum variable. 
+
+2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
+No. The web site above provides a brief description of the weights in Section V, but the user guide only mentions the appropriate weight variable for individuals or households (SWEIGHT) in a section described the constructed and geographic variables. There is also no mention of which variables should be used for appropriate variance estimation, despite the fact that there are variables called PSUID and IDPSU in the data file. There is no indication of what variable (or variables) should be used to capture the stratified sampling that was performed.
+
+3. **Is everything that the data user needs to know about the complex sampling contained in one place?**
+For the most part. The user guide contains a detailed section on sampling, and the technical documentation provides even more detailed aimed at survey statisticians.
+
+4. **Are examples of specific syntax for performing correct design-based analyses provided?**
+No.
+
+5. **Are examples of analyses need for addressing specific substantive questions provided?**
+No. This documentation is in serious need of analysis examples, demonstrating syntax that should be used for design-based analyses along with indications of how to form the appropriate sample design variables for variance estimation.
+
+6. **(Bonus) Is an executive summary of the sample design provided?**
+Yes, in the user guide.
+
+7. **(Bonus) What kinds of references are provided?**
+The technical documentation does not provide any references, and the user guide briefly refers to papers that have been published using these data (which won't help users who actually want to analyze the data).
+
+**Score**: 1/5
 
 ___
 
