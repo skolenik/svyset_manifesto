@@ -32,8 +32,12 @@ do not correctly account for the features of complex sample designs in the estim
 Website: http://www-personal.umich.edu/~bwest/
 
 Peter Lugtig is 
-Associate Professor at the Department of Methodology and Statistics
+Associate Professor at [the Department of Methodology and Statistics] 
+(https://www.uu.nl/en/organisation/faculty-of-social-and-behavioural-sciences/about-the-faculty/departments/methodology-statistics) 
 in the School of Social and Behavioural Sciences, University of Utrecht.
+His interest in this project is from the perspective of teaching applied social scientists in working with complex survey data. 
+One of his interests is in estimating seperate components of Total Survey Error in surveys. To this end, it is vital that 
+potential errors introducted via sampling can be identified and correctly adjusted. 
 [@PeterLugtig](https://twitter.com/PeterLugtig) on Twitter.
 Website: http://www.peterlugtig.com/
 
@@ -41,7 +45,13 @@ ___
 
 ## Survey sampling features
 
-We focus on the "big four" features of complex sampling designs: stratification, cluster sampling, unequal probabilities of selection, and weight adjustments. Each design feature is described in more detail below.
+One of the objects in survey research is to come up with survey designs that minimize Total Survey Error (TSE). 
+Sampling and adjustment errors are only two of the errors within the larger TSE framework. 
+However, when surveys are build on the principles of probability sampling, sampling  errors are two types of error that can be estimated correctly. 
+When coverage and nonresponse can be estimated as well, there are possibilities to adjust errors in order to ensure that the analysis of the survey represent the larger population. 
+If this is done well, the results from the survey analysis are asymptotically unbiased, whileuncertainty due to the various errors can be estimated.
+In this manifesto, we focus on the "big four" features of complex sampling designs: stratification, cluster sampling, unequal probabilities of selection, and weight adjustments. 
+Each design feature is described in more detail below.
 
 ### Stratification
 
@@ -117,7 +127,8 @@ At the end of the day, all of the complex sampling features described above are 
 
    -  nonresponse weight adjustments
             
-As a result of all considerations above, most serious surveys that are using face-to-face data collection or address-based sampling are using a complex sample design in their fieldwork. Data resulting from the survey cannot be naively analyzed, and survey weights have to be used. 
+As a result of all considerations above, most serious surveys that are using face-to-face data collection or address-based sampling are using a complex sample design in their fieldwork. 
+Data resulting from the survey cannot be naively analyzed, and survey weights have to be used. 
 Survey statisticians routinely compute weights for users. These weights often take the form of a design weight that corrects for 
 eligibility, frame overlap, and unequal seelction probabilities in sampling. A separate nonresponse weight corrects for 
 nonresponse, and sometimes for noncoverage errors in the frame used. In some surveys additional weights are provided for the 
@@ -125,7 +136,12 @@ purpose of doing cross-national comparisons (multi-country surveys) or longitudi
 For more information on how modern surveys are efficiently designed, and weights are computed, we refer the reader to Kalton, 
 Flores-Cervantes (2003), Lohr (2010), Bethlehem (2011), Valliant, Dever, Kreuter (2013), Valliant and Dever (2017) or Kolenikov 
 (2016). 
-The weights included in the dataset should be accompanied with detailed documentation on how the weights were computed and should be used in practice by applied researchers. We have often found that the documentation of survey weights is inadequate. Sometimes, details on how the weights were designed are missing. More often, the decsription of the weights is sparse or very technical. This then leads to users not using weights at all, or using them incorrectly. West, Sakshaug and Aurelien (2016) have shown for example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' (SESTAT). This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting of five main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys originating in the U.S., U.K. and Europe. 
+The weights included in the dataset should be accompanied with detailed documentation on how the weights were computed and should be used in practice by applied researchers. 
+We have often found that the documentation of survey weights is inadequate. 
+Sometimes, details on how the weights were designed are missing. 
+More often, the decsription of the weights is sparse or very technical. This then leads to users not using weights at all, or using them incorrectly. 
+West, Sakshaug and Aurelien (2016) have shown for example that analytic errors are prevalent in 145 analyses of the survey 'Scientists and Engineers Statistical Data System' (SESTAT). 
+This paper seeks to provide a rubric for how survey weights should be documented. We will define a set of rubrics consisting of five main and two bonus elements, and then use these rubrics to discuss the survey documentation of several popular surveys originating in the U.S., U.K. and Europe. 
 
 This paper is accompanied by a website, where applied researchers can paste example code from SAS, Stata and R and generate corresponding code in other software packages to facilitate the correct use of weights in future. Please visit https://statstas.shinyapps.io/svysettings/ for details.
 
@@ -196,7 +212,7 @@ In the above, the line `( object <- function_call(input1, ... ) )` simultaneousl
 the object, and prints it. Lumley (2010) notes that by default, all functions give missing values (`NA`)
 when they encounter item missing data. To discard the missing data from analysis, `na.rm=TRUE` should
 be specified as an option to the `svy...(...,na.rm=TRUE)` functions, with the effect of treating 
-the non-missing data data as a subpopulation.
+the non-missing data data as a subpopulation. More complex analysis, such as linear models are available through the survey package. 
 
 The RDD unequal weights design:
 
