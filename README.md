@@ -525,6 +525,8 @@ The NSFG provides an excellent example of the type of documentation
 that needs to be provided to data users to minimize the risk of analytic error 
 due to a failure to account for complex sampling features.
 
+Accessed on 2018-07-15.
+
 ___
 
 ### The Population Assessment of Tobacco and Health
@@ -574,6 +576,7 @@ There are several references to the most important sample design literature incl
 The PATH PUF user guide is another excellent, gold-standard example of detailed and useful information 
 designed to make the life of the survey data user easier. 
 
+Accessed on 2018-12-17.
 ___
 
 ### Understanding Society (Waves 1--8)
@@ -640,6 +643,7 @@ Examples in Stata and SPSS are provided, but neither cover data management, or p
 examples of basic *unweighted* analyses, i.e., do not help the researchers to set the data up
 for correct analysis that would account for the complex sampling nature of the survey.
 
+Accessed on 2018-12-12.
 ___
 
 ### European Social Survey ###
@@ -679,13 +683,14 @@ Documentation is scattered across many different documents and files on the ESS 
 However, most users in practice would use one round of ESS. 
 In that case, the country report files contain details on how fieldwork (including sampling) was conducted.
 One good aspect of the European Social Survey is that the users are explicitly warned that data need to be weighted 
-when data are downloaded from the ESS website. However, there isn't an accompanying warning about using the sample design variables for variance estimation as well.
+when data are downloaded from the ESS website. However, there isn't an accompanying warning about using 
+the sample design variables for variance estimation as well.
 
 4. **Are examples of specific syntax for performing correct design-based analyses provided?**
 No.
 
 5. **Are examples of analyses need for addressing specific substantive questions provided?**
-There are a few examples of data management code, but not including analysis syntax.
+There are a few examples of data management code, but not of the complex survey analysis syntax.
 
 6. **(Bonus) Is an executive summary of the sample design provided?**
 There is an executive summary that describes the basic sampling methodology. 
@@ -697,6 +702,12 @@ on the ESS website, with more detailed documentation.
 
 **Score**: 2/5
 
+The ESS is a typical example of documentation written by survey statisticians for survey statisticians,
+and it takes a survey statistician to process it and come up with the requisite syntax. 
+Novice users may be deterred by the complexity of documentation, and would choose to either underutilize
+the resource, or would otherwise have to bombard the survey provides with additional questions.
+
+Accessed on 2017-07-19.
 ___
 
 ### American Time Use Survey
@@ -754,6 +765,9 @@ The technical documentation does not provide any references, and the user guide 
 
 **Score**: 1/5
 
+The documentation is incomplete making it impossible to analyze the data correctly.
+
+Accessed 2018-12-21.
 ___
 
 
@@ -809,9 +823,11 @@ Slight limitations of the documentation is that examples of the settings are onl
 given for one package, Stata, and no examples of substantive analyses, e.g. those leading to the primary
 tables in the substantive report, are provided.
 
+Accessed on 2018-12-11.
+
 ___
 
-### Survey name
+### Placeholder: Survey name
 
 **Funding**: the ultimate client of the study
 
@@ -825,6 +841,7 @@ ___
 
 **Score**:
 
+Accessed on [DATE].
 ___
 
 ## Acknowledgements
