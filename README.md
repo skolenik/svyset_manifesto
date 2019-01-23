@@ -360,6 +360,12 @@ https://statstas.shinyapps.io/svysettings/
 ___
 
 ## Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics
+Large scale data collections are nowadays routinely released to the public. They typically include anonymized survey micro-date, along with some variables that include details about the fieldwork itself, 
+and one or several weighting variables that allow any data user to correct for unequal sampling probabilities introducted in the survey design, 
+as well as errors introduced by coverage and/or nonresponse errors. 
+The survey datasets are accompanied with survey documentation that explain the design of the surveys and details on the measurements taken. 
+In teh next section we first propose a short checklist in order to assess the qualityt of survey documentation. We then apply the checklist to several existing and widely used public datasets. We argue that the documentation should be understandable and usable to the average applied scientist, and conclude with recommendations on how to improve survey documentation.
+
 
 1. **Can a survey statistician figure out from the documentation how to set the data up for correct estimation?**
 This would be a person with training on par with or exceeding the level of the Lohr (1999) or Kish (1965) textbooks, and applied 
@@ -593,9 +599,9 @@ https://www.understandingsociety.ac.uk/sites/default/files/downloads/documentati
 **Rubrics**:
 
 1. **Can a survey statistician figure out how to declare the complex sampling features?**
-Yes. See the link above. The stratification is well decribed, both for Understanding Society, and it's predecessor, 
+Yes. See the link above. The stratification is well described, both for Understanding Society, and it's predecessor, 
 The British Household Panel Study. The sample design is complex, as this study is longitudinal. 
-The study inclused refreshment samples to increase sample sizes, include minorities, and add new regions into the study. 
+The study included refreshment samples to increase sample sizes, include minorities, and add new regions into the study. 
 Sampling design variables are described in Section 3.2.7 of the User Guide referenced above.
 
 2. **Can an applied researcher figure out from the documentation how to set the data up for correct estimation?**
@@ -631,7 +637,7 @@ written on the design and analysis of *Understanding Society* Data.
 
 *Understanding Society* is a very complex survey. While technical documentation is excellent
 for its technical purposes, guidance for applied researchers is between limited and confusing. 
-Examples in Stata and SPSS are provided, but either cover data management, or provide
+Examples in Stata and SPSS are provided, but neither cover data management, or provide
 examples of basic *unweighted* analyses, i.e., do not help the researchers to set the data up
 for correct analysis that would account for the complex sampling nature of the survey.
 
@@ -673,7 +679,7 @@ Guidance is included on how to comibine the three weights, and when to use what 
 Documentation is scattered across many different documents and files on the ESS website. 
 However, most users in practice would use one round of ESS. 
 In that case, the country report files contain details on how fieldwork (including sampling) was conducted.
-One good aspect of the use of weights is that the users are explicitly warned that data need to be weighted 
+One good aspect of the European Social Survey is that the users are explicitly warned that data need to be weighted 
 when data are downloaded from the ESS website. However, there isn't an accompanying warning about using the sample design variables for variance estimation as well.
 
 4. **Are examples of specific syntax for performing correct design-based analyses provided?**
