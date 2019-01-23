@@ -31,9 +31,8 @@ do not correctly account for the features of complex sample designs in the estim
 [@bradytwest](https://twitter.com/bradytwest) on Twitter.
 Website: http://www-personal.umich.edu/~bwest/
 
-Peter Lugtig is 
-Associate Professor at [the Department of Methodology and Statistics] 
-(https://www.uu.nl/en/organisation/faculty-of-social-and-behavioural-sciences/about-the-faculty/departments/methodology-statistics) 
+Peter Lugtig is Associate Professor at 
+[the Department of Methodology and Statistics](https://www.uu.nl/en/organisation/faculty-of-social-and-behavioural-sciences/about-the-faculty/departments/methodology-statistics) 
 in the School of Social and Behavioural Sciences, University of Utrecht.
 His interest in this project is from the perspective of teaching applied social scientists in working with complex survey data. 
 One of his interests is in estimating seperate components of Total Survey Error in surveys. To this end, it is vital that 
