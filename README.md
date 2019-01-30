@@ -844,6 +844,28 @@ ___
 Accessed on [DATE].
 ___
 
+## Recommendations for survey organizations
+
+Follow best practices and the above rubrices, and strive to make 5 stars in our ratings!
+
+Documentation of survey settings can also be strengthened in the existing documentation standards.
+
+### The Data  Documentation Initiative
+
+DDI (http://www.ddialliance.org/) is an international standard for describing the data 
+produced by surveys and other observational methods in the social, behavioral, economic, and health sciences. 
+DDI is a free standard that can document and manage different stages in the research data lifecycle, 
+such as conceptualization, collection, processing, distribution, discovery, and archiving. 
+Documenting data with DDI facilitates understanding, interpretation, and use -- 
+by people, software systems, and computer networks. 
+
+The version of DDI as of January 2019, DDI 3, provides support to document the weights in a free format. 
+DDI Codebook 2.5 provides the following specifications:
+
+- http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/field_level_documentation_files/schemas/codebook_xsd/elements/weight.html
+
+___
+
 ## Acknowledgements
 
 The initial impetus for this work came from the AAPOR presentation
