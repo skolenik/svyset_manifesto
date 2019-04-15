@@ -864,6 +864,15 @@ DDI Codebook 2.5 provides the following specifications:
 
 - http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/field_level_documentation_files/schemas/codebook_xsd/elements/weight.html
 
+
+## Additional resources
+
+Piotr Jabkowski (Adam Mikiewicz University, Poznan, Poland) has been maintaining Surveys Quality Assessment Database (SQAD).
+This project compiles metadata from 67 waves of six major European cross-country comparative surveys, 
+totaling 1537 individual surveys. 
+See [the project webpage](https://www.researchgate.net/project/Surveys-Quality-Assessment-Database-SQAD)
+and [the Technical Report 1.0](https://www.researchgate.net/publication/327136417_COMPARATIVE_ANALYSIS_OF_THE_QUALITY_OF_SURVEY_SAMPLES_IN_THE_CROSSNATIONAL_STUDIES_SURVEY_ARCHIVISATION_AND_META-BASE_OF_RESULTS_TECHNICAL_REPORT_VERSION_10).
+
 ___
 
 ## Acknowledgements
