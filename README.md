@@ -11,6 +11,33 @@ We demonstrate how statistical software treats them, and how the survey data pro
 can make data users' lifes easier by clearly documenting accurate and efficient ways to make sure 
 that their software properly accounts for the complex sampling design features.
 
+- [Survey sampling features](#survey-sampling-features)
+    + [Stratification](#stratification)
+    + [Cluster Sampling](#cluster-sampling)
+    + [Unequal Probabilities of Selection](#unequal-probabilities-of-selection)
+    + [Weight Adjustments](#weight-adjustments)
+    + [Sampling is about doing the best job for the money!](#sampling-is-about-doing-the-best-job-for-the-money-)
+ - [Survey settings in statistical software](#survey-settings-in-statistical-software)
+    + [R](#r)
+    + [Stata](#stata)
+    + [SAS](#sas)
+    + [See also](#see-also)
+ - [Documentation on appropriate design-based analysis techniques for complex sample survey data: rubrics](#documentation-on-appropriate-design-based-analysis-techniques-for-complex-sample-survey-data--rubrics)
+ - [Evaluating documentation in practice](#evaluating-documentation-in-practice)
+    + [Dealing with existing documentation](#dealing-with-existing-documentation)
+    + [The National Survey of Family Growth (NSFG), 2013--2015](#the-national-survey-of-family-growth--nsfg---2013--2015)
+    + [The Population Assessment of Tobacco and Health](#the-population-assessment-of-tobacco-and-health)
+    + [Understanding Society (Waves 1--8)](#understanding-society--waves-1--8-)
+    + [European Social Survey](#european-social-survey)
+    + [American Time Use Survey](#american-time-use-survey)
+    + [The 2005 India Human Development Survey](#the-2005-india-human-development-survey)
+    + [A Portrait of Jewish Americans](#a-portrait-of-jewish-americans)
+    + [Placeholder: Survey name](#placeholder--survey-name)
+- [Recommendations for survey organizations](#recommendations-for-survey-organizations)
+    + [The Data  Documentation Initiative](#the-data--documentation-initiative)
+- [Additional resources](#additional-resources)
+- [Acknowledgements](#acknowledgements)
+
 ### About authors
 
 Stas Kolenikov is Principal Scientist at [Abt Associates](http://www.abtassociates.com); 
@@ -881,4 +908,6 @@ The initial impetus for this work came from the AAPOR presentation
 by Margaret Levenstein on how ICPSR handles meta data of the surveys they 
 store and distribute, and from 
 [the discussion on Twitter that followed](https://twitter.com/MaryELosch/status/997213578917707778).
+
+<a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a>
 
